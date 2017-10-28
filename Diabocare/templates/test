@@ -1,0 +1,985 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<head>
+{% if title %}
+<title>{{ title }}</title>
+        {% else %}
+        <title>DiaboCare</title>
+        {% endif %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Medical Care a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+<!-- flexslider-css-file -->
+<link rel="stylesheet" href="../../static/css/flexslider.css" type="text/css" media="screen" property="" />
+<!-- //flexslider-css-file -->
+
+<link rel="stylesheet" href="../../static/css/easy-responsive-tabs.css">
+
+<link href="../../static/css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons-css-file -->
+<link href="../../static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">	<!-- bootstrap-css-file -->
+<link href="../../static/css/style.css" type="text/css" rel="stylesheet" media="all">	<!-- style-css-file -->
+
+
+<!-- gallery -->
+<link rel="stylesheet" href="../../static/css/lightbox.css">
+<!-- //gallery -->
+
+<!-- fonts -->
+ <link href="//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet">
+ <link href="//fonts.googleapis.com/css?family=Cinzel:400,700,900" rel="stylesheet">
+ <!-- //fonts -->
+ 
+<!-- Default-JavaScript-File -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //Default-JavaScript-File -->
+	
+<script src="../../static/js/bootstrap.js"></script>	<!-- //bootstrap-JavaScript-File -->
+{% block head %}{% endblock %}	
+</head>
+<!-- Head -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+	<!-- banner -->
+	<div id="home" class="w3ls-banner"> 
+		<!-- header -->
+		<div class="header-w3layouts"> 
+			<!-- Navigation -->
+			<nav class="navbar navbar-default navbar-fixed-top"> 
+				<div class="container">
+					<div class="navbar-header page-scroll">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Diabo_care</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<h1><a class="navbar-brand" href="{{ url_for('home') }}">DiaboCare</a></h1>
+					</div> 
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						<ul class="nav navbar-nav navbar-right cl-effect-15">
+							<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+							<li class="hidden"><a class="page-scroll" href="#page-top"></a>	</li>
+							<li><a class="page-scroll scroll" href="#home">Home</a></li>
+							<li><a class="page-scroll scroll" href="#about">About</a></li>
+							<!-- <li><a class="page-scroll scroll" href="#services">Services</a></li> -->
+							<li><a class="page-scroll scroll" href="#team">Team</a></li>
+							{% if current_user.is_authenticated %}
+							<li><a class="page-scroll scroll" href="{{ url_for('logout') }}">Logout</a></li>
+							{% else %}
+							<li><a class="page-scroll scroll"  href="{{ url_for('login') }}">Login</a></li>
+							<li><a class="page-scroll scroll"  href="{{ url_for('signup') }}">SignUp</a></li>
+							{% endif %}
+							<!-- <li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a class="page-scroll scroll" href="#laboratories">laboratories</a></li>
+									<li><a class="page-scroll scroll" href="#testimonials">Testimonials</a></li>
+								</ul>
+							</li> -->
+							<!-- <li><a class="page-scroll scroll" href="#blog">Blog</a></li> -->
+							<li><a class="page-scroll scroll" href="#contact">Contact</a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container -->
+			</nav>  
+		</div>	
+		<!-- //header -->
+		<!--banner-->
+		<!--Slider-->
+			<div class="w3l_banner_info">
+				<div class="col-md-5 banner-form-agileinfo">
+					<img src="../../static/images/alt1.png" alt="" />
+				</div>
+				<div class="col-md-7 slider">
+					<div class="callbacks_container">
+								<ul class="rslides" id="slider3">
+									<li>
+										<div class="slider_banner_info">
+											 <h4>WE make healthy</h4>
+											<p>Medical school education and post graduate education empha -size thoroughness.The good physician treats the disease, great physician treats the patient who has the disease.</p>
+										</div>
+
+									</li>
+									<li>
+										<div class="slider_banner_info">
+											<h4>Medicine is a science</h4>
+											<p>The best doctor is the one you run to and can't find.We should be concerned not only about the health of individual patients, but also the health of our entire society.</p>
+										</div>
+
+									</li>
+									<li>
+										<div class="slider_banner_info">
+											<h4>Nothing cures health</h4>
+											<p>Never go to a doctor whose office plants have died.You know what they call the fellow who finishes last in his medical school graduating class? They call him 'Doctor. </p>
+										</div>
+
+									</li>
+									<li>
+										<div class="slider_banner_info">
+											<h4>We do best treatment</h4>
+											<p>Time is generally the best doctor.so well choose your best doctor before time lossesThe art of medicine consists in amusing the patient while nature cures the disease.</p>
+										</div>
+
+									</li>
+								</ul>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			<!--//Slider-->
+			
+			</div>
+		<!--//banner-->
+		
+	</div>	
+	<!-- //banner --> 
+
+<!-- about -->
+<div class="line">
+</div>
+	<div class="about" id="about">
+		<div class="container">
+			<div class="w3ls-heading">
+				<h3>About</h3>
+			</div>
+			<div class="col-md-6 about-left">
+				<div class="w3labout-img boxw3-agile"> 
+					<img src="../../static/images/about.jpg" alt="" class="img-responsive" />
+					<div class="agile-caption">
+						<h3>Medical care</h3>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+							sed diam nonummy nibh euismod tincidunt.</p>
+					</div> 
+				</div>
+			</div>
+			<div class="col-md-6 about-right">
+				<h2>Integer euismod in orci quis</h2>
+				<p>Nullam maximus consequat bibendum. Integer euismod in orci quis tempus. Nunc sed ligula facilisisNullam maximus consequat bibendum. Integer euismod in orci quis tempus. Nunc sed ligula facilisisNullam maximus consequat bibendum. Integer euismod in orci quis tempus. Nunc sed ligula facilisis</p>
+				<a href="#myModal" class="w3more" data-toggle="modal"><i class="fa fa-mail-forward" aria-hidden="true"></i> Read more</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+<!-- //about -->
+	
+<!-- modal --><!-- for pop up -->
+<div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header"> 
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="span2" aria-hidden="true">&times;</span></button>						
+				<h4 class="modal-title"> DiaboCare </h4>
+			</div> 
+		<div class="modal-body">
+			<div class="agileits-w3layouts-info">
+				<img src="images/about.jpg" alt="" />
+				<p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper.  Cras tempor massa luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem.</p>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+<!-- //modal --><!-- //for pop up -->
+
+<!-- tabs -->	<!-- services -->
+<div class="line">
+</div>
+<div class="demo" id="services">    
+<div class="container"> 
+				<div class="w3ls-heading">
+					<h3>What We Do</h3>
+				</div>
+<div class="horizontalTab" id="horizontalTab">
+	<ul class="resp-tabs-list list-group">
+		<li class="list-group-item text-center">Service 1</li>
+		<li class="list-group-item text-center">Service 2</li>
+		<li class="list-group-item text-center">Service 3</li>
+		<li class="list-group-item text-center">Service 4</li>
+		<li class="list-group-item text-center">Service 5</li>
+		<li class="list-group-item text-center">Service 6</li>
+	</ul>
+	<div class="resp-tabs-container">
+		<!-- section -->
+							<div class="bhoechie-tab-content active">
+								<div class="services-grids">
+									<div class="ser-img">
+										<img src="../../static/images/s6.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>Contrary to popular belief, Lorem Ipsum is not simply text</h3>
+										<p>Integer sed blandit nisi, eget tempor nulla. Vivamus ut mi nec quam iaculis ultricies. 
+										Maecenas at placerat metus. Curabitur arcu purus, eleifend ut massa at, fringilla sagittis quam. 
+										Nulla volutpat tellus orci, id laoreet ante pretium id. Ut iaculis quis eros ac bibendum.
+										</p>
+										<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
+										scelerisque magna non turpis euismod bibendum. 
+										</p>
+										<a href="#myModal" data-toggle="modal"><i class="fa fa-mail-forward" aria-hidden="true"></i> Read More</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<!--  section -->
+							<div class="bhoechie-tab-content">
+								<div class="services-grids">
+									<div class="ser-img">
+										<img src="../../static/images/s5.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>At vero eos et accusamus et iusto dignissimos ducimus qui</h3>
+										<p>Integer sed blandit nisi, eget tempor nulla. Vivamus ut mi nec quam iaculis ultricies. 
+										Maecenas at placerat metus. Curabitur arcu purus, eleifend ut massa at, fringilla sagittis quam. 
+										Nulla volutpat tellus orci, id laoreet ante pretium id. Ut iaculis quis eros ac bibendum.
+										</p>
+										<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
+										scelerisque magna non turpis euismod bibendum. 
+										</p>
+										<a href="#myModal" data-toggle="modal"><i class="fa fa-mail-forward" aria-hidden="true"></i> Read More</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+				
+							<!--  search -->
+							<div class="bhoechie-tab-content">
+								<div class="services-grids">
+									<div class="ser-img">
+										<img src="../../static/images/s1.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>On the other hand, we denounce with righteous indignation</h3>
+										<p>Integer sed blandit nisi, eget tempor nulla. Vivamus ut mi nec quam iaculis ultricies. 
+										Maecenas at placerat metus. Curabitur arcu purus, eleifend ut massa at, fringilla sagittis quam. 
+										Nulla volutpat tellus orci, id laoreet ante pretium id. Ut iaculis quis eros ac bibendum.
+										</p>
+										<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
+										scelerisque magna non turpis euismod bibendum. 
+										</p>
+										<a href="#myModal" data-toggle="modal"><i class="fa fa-mail-forward" aria-hidden="true"></i> Read More</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="bhoechie-tab-content">
+								<div class="services-grids">
+									<div class="ser-img">
+										<img src="../../static/images/s4.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>Laboris nisi ut aliquip ex ea commodo consequat indignation</h3>
+										<p>Integer sed blandit nisi, eget tempor nulla. Vivamus ut mi nec quam iaculis ultricies. 
+										Maecenas at placerat metus. Curabitur arcu purus, eleifend ut massa at, fringilla sagittis quam. 
+										Nulla volutpat tellus orci, id laoreet ante pretium id. Ut iaculis quis eros ac bibendum.
+										</p>
+										<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
+										scelerisque magna non turpis euismod bibendum. 
+										</p>
+										<a href="#myModal" data-toggle="modal"><i class="fa fa-mail-forward" aria-hidden="true"></i> Read More</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="bhoechie-tab-content">
+								<div class="services-grids">
+									<div class="ser-img">
+										<img src="../../static/images/s3.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>Temporibus autem quibusdam et aut officiis debitis denounce</h3>
+										<p>Integer sed blandit nisi, eget tempor nulla. Vivamus ut mi nec quam iaculis ultricies. 
+										Maecenas at placerat metus. Curabitur arcu purus, eleifend ut massa at, fringilla sagittis quam. 
+										Nulla volutpat tellus orci, id laoreet ante pretium id. Ut iaculis quis eros ac bibendum.
+										</p>
+										<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
+										scelerisque magna non turpis euismod bibendum. 
+										</p>
+										<a href="#myModal" data-toggle="modal"><i class="fa fa-mail-forward" aria-hidden="true"></i> Read More</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="bhoechie-tab-content">
+								<div class="services-grids">
+									<div class="ser-img">
+										<img src="../../static/images/s2.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>Temporibus autem quibusdam et officiis debitis quibusdam et</h3>
+										<p>Integer sed blandit nisi, eget tempor nulla. Vivamus ut mi nec quam iaculis ultricies. 
+										Maecenas at placerat metus. Curabitur arcu purus, eleifend ut massa at, fringilla sagittis quam. 
+										Nulla volutpat tellus orci, id laoreet ante pretium id. Ut iaculis quis eros ac bibendum.
+										</p>
+										<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
+										scelerisque magna non turpis euismod bibendum. 
+										</p>
+										<a href="#myModal" data-toggle="modal"><i class="fa fa-mail-forward" aria-hidden="true"></i> Read More</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+	</div>
+</div>
+</div>
+</div>
+<!-- //tabs -->    <!-- services -->
+
+<!-- team -->	<!-- Our specialists -->
+		<div class="line">
+		</div>
+	<div class="team" id="team">
+		<div class="container">
+			<div class="w3ls-heading">
+				<h3>Meet Our Specialists</h3>
+			</div>
+			<div class="agile_team_grids">
+				<div class="col-md-3 agile_team_grid  agile_team_gridf">
+					<div class="agile_team_grid_main">
+						<img src="../../static/images/t.jpg" alt=" " class="img-responsive" />
+						<div class="p-mask">
+							<ul class="social-icons">
+								<li><a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a></li>
+								<li><a href="#" class="icon-button google"><i class="icon-google"></i><span></span></a></li>
+								<li><a href="#" class="icon-button v"><i class="icon-v"></i><span></span></a></li>
+								<li><a href="#" class="icon-button pinterest"><i class="pinterest"></i><span></span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="agile_team_grid1">
+						<h4>Elisa liden</h4>
+						<p>Numerology</p>
+					</div>
+				</div>
+				<div class="col-md-3 agile_team_grid agile_team_grid2">
+					<div class="agile_team_grid_main">
+						<img src="../../static/images/t2.jpg" alt=" " class="img-responsive" />
+						<div class="p-mask">
+							<ul class="social-icons">
+								<li><a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a></li>
+								<li><a href="#" class="icon-button google"><i class="icon-google"></i><span></span></a></li>
+								<li><a href="#" class="icon-button v"><i class="icon-v"></i><span></span></a></li>
+								<li><a href="#" class="icon-button pinterest"><i class="pinterest"></i><span></span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="agile_team_grid1">
+						<h4>Martina</h4>
+						<p>Dentist</p>
+					</div>
+				</div>
+				<div class="col-md-3 agile_team_grid agile_team_grid3">
+					<div class="agile_team_grid_main">
+						<img src="../../static/images/tt.png" alt=" " class="img-responsive" />
+						<div class="p-mask">
+							<ul class="social-icons">
+								<li><a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a></li>
+								<li><a href="#" class="icon-button google"><i class="icon-google"></i><span></span></a></li>
+								<li><a href="#" class="icon-button v"><i class="icon-v"></i><span></span></a></li>
+								<li><a href="#" class="icon-button pinterest"><i class="pinterest"></i><span></span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="agile_team_grid1">
+						<h4>Vickey alter</h4>
+						<p>Surgery Specialist</p>
+					</div>
+				</div>
+				<div class="col-md-3 agile_team_grid agile_team_grid4">
+					<div class="agile_team_grid_main">
+						<img src="../../static/images/t4.jpg" alt=" " class="img-responsive" />
+						<div class="p-mask">
+							<ul class="social-icons">
+								<li><a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a></li>
+								<li><a href="#" class="icon-button google"><i class="icon-google"></i><span></span></a></li>
+								<li><a href="#" class="icon-button v"><i class="icon-v"></i><span></span></a></li>
+								<li><a href="#" class="icon-button pinterest"><i class="pinterest"></i><span></span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="agile_team_grid1">
+						<h4>Rose mary</h4>
+						<p>Skin care expert</p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //team -->	<!-- //Our specialists -->
+
+<!-- appointment form -->
+<div class="line">
+</div>
+<div class="appointment">
+	<div class="container">
+		<div class="w3ls-heading">
+			<h3>Make an appointment today</h3>
+		</div>
+		<div class="appointment-grid">
+			<div class="col-md-4 appointmnet-left">
+				<div class="inner">
+					<div class="working-grid">
+						<h4>working hours</h4>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i><span>Mon to fri</span> <span class="span1">9:00 am to 6:30 pm</span></p>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i><span>sat</span> <span class="span1">9:00 am to 10:00 pm</span></p>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i><span>sun</span> <span class="span1">10:00 am to 1:00 pm</span></p>
+					<div class="clearfix"></div>
+					</div>
+					<div class="working-grid1">
+						<h4>For help</h4>
+						<h5><i class="fa fa-pencil" aria-hidden="true"></i>For appointment fill the form</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet ultrices odio.</p>
+					<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="col-md-4 appointmnet-middle">
+				<div class="inner">
+					<h4>Reading form</h4>
+					<form action="#" name="row" method="post" class="register">
+						<input type="text" name="name" id="name" placeholder="Name" required="">
+						<input class="date" id="datepicker" type="text" value="Appointment date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
+						<textarea onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Message...';}" >Tell us About your Mood...</textarea>
+						<input type="submit" onclick="myFunction()" value="Submit reading ">
+					</form>
+				</div>
+			</div>
+			<div class="col-md-4 appointmnet-right">
+				<div class="inner">
+					<img src="../../static/images/tt.png" alt=""/>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- //appointment form -->
+
+<!-- Laboratories -->
+<div class="line">
+</div>
+	<div class="laboratories" id="laboratories">
+		<div class="w3l-about w3l-gallery">
+			<div class="container">
+				<div class="w3ls-heading">
+					<h3>Laboratories</h3>
+				</div>
+				<div class="gallery-grids">
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/0.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="i../../static/images/0.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/4.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/4.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/5.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/5.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/7.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/7.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/17.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/17.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/9.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/9.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/23.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/23.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/13.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/13.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/s3.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/s3.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/2.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/2.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/s4.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/s4.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="col-md-3 gallery-grid">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<a class="example-image-link" href="images/14.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sem ac lectus mattis sagittis. Donec pulvinar quam sit amet est vestibulum volutpat. Phasellus sed nibh odio. Phasellus posuere at purus sit amet porttitor. Cras euismod egestas enim eget molestie. Aenean ornare condimentum odio, in lacinia felis finibus non. Nam faucibus libero et lectus finibus, sed porttitor velit pellentesque.">
+										<img src="../../static/images/14.jpg" alt="" />
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+						<script src="../../static/js/lightbox-plus-jquery.min.js"> </script>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- //Laboratories	-->
+	
+<!-- testimonials -->
+<div class="line">
+</div>
+	<div class="testimonials" id="testimonials">
+		<div class="container">
+			<div class="w3ls-heading">
+				<h3>Testimonials</h3>
+			</div>
+			<div class="w3_agileits_testimonial_grids">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+								<div class="w3_agileits_testimonial_grid">
+									<p><i class="fa fa-quote-right" aria-hidden="true"></i>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+										dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<i class="fa fa-quote-right" aria-hidden="true"></i></p>
+									<img src="../../static/images/test1.jpg" alt=" " class="img-responsive" />
+									<h4>Rosy James<span>mollit anim</span></h4>
+								</div>
+							</li>
+							<li>
+								<div class="w3_agileits_testimonial_grid">
+									<p><i class="fa fa-quote-right" aria-hidden="true"></i>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+										dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<i class="fa fa-quote-right" aria-hidden="true"></i></p>
+									<img src="../../static/images/test2.jpg" alt=" " class="img-responsive" />
+									<h4>Allen parker<span>voluptate velit</span></h4>
+								</div>
+							</li>
+							<li>
+								<div class="w3_agileits_testimonial_grid">
+									<p><i class="fa fa-quote-right" aria-hidden="true"></i>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+										dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<i class="fa fa-quote-right" aria-hidden="true"></i></p>
+									<img src="../../static/images/test3.jpg" alt=" " class="img-responsive" />
+									<h4>Crisp Ally <span>sint occaecat</span></h4>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<!-- flexSlider -->
+					<script defer src="../../static/js/jquery.flexslider.js"></script>
+					<script type="text/javascript">
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				  </script>
+				<!-- //flexSlider -->
+			</div>
+		</div>
+	</div>
+<!-- //testimonials -->
+ <!-- classes -->	<!-- blog -->
+<!-- <div class="line">
+</div>
+	<div id="blog" class="banner-bottom blog">
+		<div class="container">
+			<div class="w3ls-heading">
+				<h3>Blog</h3>
+			</div>
+			<div class="w3layouts_classes_grids">
+				<ul id="flexiselDemo1">	
+					<li>
+						<div class="w3_agile_class_grid">
+							<div class="w3layouts_team_grid agileits_w3layouts_class">
+								<img src="images/1.jpg" alt=" " class="img-responsive" />
+								<div class="w3layouts_team_grid_pos">
+									<div class="wthree_text">
+										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
+									</div>
+								</div>
+								<div class="agileits_w3layouts_class_pos">
+									<ul>
+										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>14/3/2017</li>
+										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">11</a></li>
+										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">9</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="w3_agileits_class_grid">	
+								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
+								<h4><a href="#" data-toggle="modal" data-target="#myModal">ultricies libero lobortis</a></h4>
+								<h5>selena karl</h5>
+								<div class="w3_agileits_class_grid_pos">
+									<img src="images/test1.jpg" alt=" " class="img-responsive" />
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="w3_agile_class_grid">
+							<div class="w3layouts_team_grid agileits_w3layouts_class">
+								<img src="images/20.jpg" alt=" " class="img-responsive" />
+								<div class="w3layouts_team_grid_pos">
+									<div class="wthree_text">
+										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
+									</div>
+								</div>
+								<div class="agileits_w3layouts_class_pos">
+									<ul>
+										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>15/3/2017</li>
+										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">24</a></li>
+										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">11</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="w3_agileits_class_grid">	
+								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
+								<h4><a href="#" data-toggle="modal" data-target="#myModal">auctor eget sem feugiat</a></h4>
+								<h5>Amelin Carl</h5>
+								<div class="w3_agileits_class_grid_pos">
+									<img src="images/test2.jpg" alt=" " class="img-responsive" />
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="w3_agile_class_grid">
+							<div class="w3layouts_team_grid agileits_w3layouts_class">
+								<img src="images/21.jpg" alt=" " class="img-responsive" />
+								<div class="w3layouts_team_grid_pos">
+									<div class="wthree_text">
+										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
+									</div>
+								</div>
+								<div class="agileits_w3layouts_class_pos">
+									<ul>
+										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>16/3/2017</li>
+										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">26</a></li>
+										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">22</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="w3_agileits_class_grid">	
+								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
+								<h4><a href="#" data-toggle="modal" data-target="#myModal">blandit dolor venenatis</a></h4>
+								<h5>Thomas Richard</h5>
+								<div class="w3_agileits_class_grid_pos">
+									<img src="images/test3.jpg" alt=" " class="img-responsive" />
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="w3_agile_class_grid">
+							<div class="w3layouts_team_grid agileits_w3layouts_class">
+								<img src="images/1.jpg" alt=" " class="img-responsive">
+								<div class="w3layouts_team_grid_pos">
+									<div class="wthree_text">
+										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
+									</div>
+								</div>
+								<div class="agileits_w3layouts_class_pos">
+									<ul>
+										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>17/3/2017</li>
+										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">29</a></li>
+										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">10</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="w3_agileits_class_grid">	
+								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
+								<h4><a href="#" data-toggle="modal" data-target="#myModal">cursus urna urna quis</a></h4>
+								<h5>Laura Lii</h5>
+								<div class="w3_agileits_class_grid_pos">
+									<img src="images/test2.jpg" alt=" " class="img-responsive" />
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div> -->
+<!-- //classes -->	<!-- //blog --> 
+
+<!-- contact -->
+<div class="line">
+</div>
+	 <div class="contact" id="contact">
+	<div class="container">
+		<div class="w3ls-heading">
+			<h3>Contact</h3>
+		</div>
+		<div class="contact-top-grids">
+			<div class="col-md-6 contact-left-">
+				<div class="left-top">
+					<h4>Contact information</h4>
+					<p><i class="fa fa-calendar" aria-hidden="true"></i><strong>Monday - Friday <span class="dot">:</span></strong>9:30 AM to 6:30 PM</p>
+					<p><i class="fa fa-map-marker" aria-hidden="true"></i><strong class="p">address <span class="dot1">:</span></strong>Chicago, 5th main road, carnivalle</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i><strong class="p1">phone <span class="dot2">:</span></strong>+040 2345 6789</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><strong class="p2">email <span class="dot3">:</span></strong><a href="mailto:info@example.com">example@email.com</a></p>
+				</div>
+				<div class="left-bottom">
+					<h4>get connected</h4>
+					<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
+						scelerisque magna non turpis euismod bibendum.</p>
+					<div class="right-w3l fotw3">
+						<ul class="top-links">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-6 contact-right">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.296948478801!2d-87.70494908450506!3d41.88647047922158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e32a54d21f20f%3A0x51b98b6ffbdca819!2sW+Fulton+St%2C+Chicago%2C+IL%2C+USA!5e0!3m2!1sen!2sin!4v1489574334335"></iframe>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+			<div class="contact-w3ls">
+				<form action="#" method="post">
+					<div class="col-md-7 col-sm-7 contact-left agileits-w3layouts">
+						<input type="text" name="First Name" placeholder="Name" required="">
+						<input type="email"  class="email" name="Email" placeholder="Email" required="">
+						<input type="text" name="Number" placeholder="Mobile Number" required="">
+						<!-- <input type="text" class="email" name="Last Name" placeholder="Last Name" required=""> -->
+					</div> 
+					<div class="col-md-5 col-sm-5 contact-right agileits-w3layouts">
+						<textarea name="Message" placeholder="Message" required=""></textarea>
+						<input type="submit" value="Submit">
+					</div>
+					<div class="clearfix"> </div> 
+				</form>
+			</div>  
+
+	</div>
+</div>
+<!-- //contact -->
+
+<!-- copyright -->
+<div class="copyright-agile">
+	<p>&copy; 2017 DiaboCare. All rights reserved | Design by Team with Love</a></p>
+</div>
+<!-- //copyright -->
+
+
+
+<script src="../../static/js/easy-responsive-tabs.js"></script>
+<script>
+$(document).ready(function () {
+$('#horizontalTab').easyResponsiveTabs({
+type: 'default', //Types: default, vertical, accordion           
+width: 'auto', //auto or any width like 600px
+fit: true,   // 100% fit in a container
+closed: 'accordion', // Start closed if in accordion view
+activate: function(event) { // Callback function if tab is switched
+var $tab = $(this);
+var $info = $('#tabInfo');
+var $name = $('span', $info);
+$name.text($tab.text());
+$info.show();
+}
+});
+$('#verticalTab').easyResponsiveTabs({
+type: 'vertical',
+width: 'auto',
+fit: true
+});
+});
+</script>
+
+
+
+
+
+<!--banner Slider starts Here-->
+		<script src="../../static/js/responsiveslides.min.js"></script>
+							<script>
+								// You can also use "$(window).load(function() {"
+								$(function () {
+								  // Slideshow 4
+								  $("#slider3").responsiveSlides({
+									auto: true,
+									pager:true,
+									nav:false,
+									speed: 500,
+									namespace: "callbacks",
+									before: function () {
+									  $('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+									  $('.events').append("<li>after event fired.</li>");
+									}
+								  });
+							
+								});
+							 </script>
+
+							<!--banner Slider starts Here-->
+							<!--start-date-piker-->
+							<link rel="stylesheet" href="../../static/css/jquery-ui.css" />
+									<script src="../../static/js/jquery-ui.js"></script>
+									<script>
+										$(function() {
+										$( "#datepicker" ).datepicker();
+										});
+									</script>
+							<!--/End-date-piker-->
+							
+<!-- js for smooth scrollings -->
+	<script src="../../static/js/SmoothScroll.min.js"></script>
+<!-- js for smooth scrollings -->
+
+<!-- flexisel -->
+	<script type="text/javascript" src="../../static/js/jquery.flexisel.js"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: false,
+				autoPlaySpeed: 3000,    		
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: { 
+					portrait: { 
+						changePoint:480,
+						visibleItems: 1
+					}, 
+					landscape: { 
+						changePoint:640,
+						visibleItems:2
+					},
+					tablet: { 
+						changePoint:768,
+						visibleItems: 3
+					}
+				}
+			});
+			
+		});
+	</script>
+<!-- //flexisel -->
+
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="../../static/js/move-top.js"></script>
+<script type="text/javascript" src="../../static/js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smooth-scrolling -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+
+
+<!-- Scrolling Nav JavaScript --> 
+    <script src="../../static/js/scrolling-nav.js"></script>  
+<!-- //fixed-scroll-nav-js --> 
+
+
+
+
+ <div class="container">
+            {% include "flash.html" %}
+            {% block content %}{% endblock %}
+            </div>
+
+
+</body>
+</html>
