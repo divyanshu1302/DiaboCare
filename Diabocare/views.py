@@ -3,13 +3,17 @@ import pymongo
 import json
 from flask import request, redirect, render_template, url_for, flash, session
 from flask_login import login_user, logout_user, login_required, current_user
-from Diabocare.models import USERS_COLLECTION  
+from Diabocare.models import USERS_COLLECTION, READING_COLLECTION
 
 from Diabocare.user import User
 from Diabocare.reading import Reading
 
 from Diabocare.forms import LoginForm, SignUpForm  #, QuestionForm, AnswerForm
 from bson.objectid import ObjectId
+
+from datetime import date
+
+
 
 
 @app.route('/')
@@ -88,3 +92,71 @@ def load_user(username):
     if not u:
         return None
     return User(u['_id'])
+
+
+@app.route('/datefilter/', methods=['GET', 'POST'])
+def dateFilter():
+    if request.method == 'POST':
+        from_date = request.form['reading_date_from']
+        to_date = request.form['reading_date_to']
+
+        print from_date
+        print to_date
+
+        print session['username']
+
+
+        value = READING_COLLECTION.find({'postedBy': session['username'], 'reading_date': {'$gte': from_date, '$lte': to_date}})
+        print value
+        # print Reading(value['value'])
+        print type(value)
+
+        reading_array = []
+        reading_date_array = []
+
+
+        for doc in value:
+            print doc['value']
+            print doc['reading_date']
+
+            reading_array.append(doc['value'])
+            reading_date_array.append(doc['reading_date'])
+
+            print type(reading_array)
+            # print type(doc)
+
+        print reading_array
+        print reading_date_array
+
+       
+
+
+        k = zip(reading_array, reading_date_array)
+
+        print k
+        print type(k)
+
+        # reading_array = [int(x) for x in reading_array]
+        # reading_date_array = [str(x) for x in reading_date_array]
+
+        # print reading_array
+        # print reading_date_array
+
+        # for i in reading_array:
+        #     print i
+
+        # dictionary = dict(zip(reading_array, reading_date_array))
+
+        # dictionary = json.dumps(dictionary)
+
+        # print type(dictionary)
+
+
+        # for key, value in dictionary:
+            # print key
+            # print value
+
+
+        return render_template('index.html', k=k, reading_array=reading_array, reading_date_array=reading_date_array)
+
+    return render_template('index.html')
