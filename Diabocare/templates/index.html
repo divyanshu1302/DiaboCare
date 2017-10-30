@@ -139,14 +139,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h3>Enter your Profile Details</h3>
 		</div>
 		<div class="appointment-grid">
-			<div class="col-md-4 appointmnet-middle">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 appointmnet-middle">
 				<div class="inner">
-					<h4>Profile form</h4>
+					<h4>Profile</h4>
 					<form action="/reading/" name="row" method="post" class="register">
-						<input type="text" name="name" id="name" placeholder="value" required="">
-						<input class="date" name="reading_date" id="datepicker" type="text" value="Appointment date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
-						<textarea  name="user_mood" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Mood...';}" >Tell us About your Mood...</textarea>
-						<input type="submit" onclick="myFunction()" value="Submit reading ">
+						First Name <input type="text" name="name" id="fname" placeholder="First Name" value= "">
+						Last Name <input type="text" name="name" id="lname" placeholder="Last Name" value= "">
+						User Name <input type="text" name="name" id="uname" placeholder="User Name" value= "" disabled="true">
+						Phone No <input type="text" id="phNo" onChange="func()" placeholder="Number" required>
+						Email Id <input type="text" name="name" id="lname" placeholder="Email" value= "" disabled="true">
+						
+						<input type="submit" id="sub" onclick="myFunction()" value="Edit" disabled="true">
 					</form>
 				</div>
 			</div>
@@ -624,6 +628,18 @@ fit: true
 <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+<script type="text/javascript">
+	
+	function func(){
+		var l = document.getElementById("phNo").value;
+		if (l.length != 10) {
+			document.getElementById("sub").disabled = true;
+		}
+		else
+			document.getElementById("sub").disabled = false;
+	}
+</script>
 
 <!-- Chart code -->
 <script>
