@@ -1543,7 +1543,8 @@ i.fa.fa-linkedin{
 .inner {
     border: 1px solid rgba(233, 30, 99, 0.66);
     padding: 20px;
-    height: 480px;
+    height: auto;
+    overflow: auto;
 }
 .working-grid span {
     color: #000;
@@ -1557,7 +1558,9 @@ i.fa.fa-linkedin{
     color: inherit;
 }
 
-
+.checkBox input{
+    font-size: 20px;
+}
 .working-grid1 {
     padding-bottom: 24px;
 }

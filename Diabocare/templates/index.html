@@ -131,7 +131,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	<!-- //banner --> 
 <!--profile-->
-<div class="line">
+
+<div class="appointment" id="profile">
+	<div class="container">
+		<div class="w3ls-heading">
+			<h3>Enter your Profile Details</h3>
+		</div>
+		<div class="appointment-grid">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 appointmnet-middle">
+				<div class="inner">
+					<h4>Profile</h4>
+					<form action="/reading/" name="row" method="post" class="register">
+						First Name <input type="text" name="name" id="fname" placeholder="First Name" value= "">
+						Last Name <input type="text" name="name" id="lname" placeholder="Last Name" value= "">
+						User Name <input type="text" name="name" id="uname" placeholder="User Name" value= "" disabled="true">
+						Phone No <input type="text" id="phNo" onChange="func()" placeholder="Number" required>
+						Email Id <input type="text" name="name" id="lname" placeholder="Email" value= "" disabled="true">
+						
+						<input type="submit" id="sub" onclick="myFunction()" value="Edit" disabled="true">
+					</form>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
 </div>
 <div class="appointment" id="profile">
 	<div class="container">
@@ -139,14 +163,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h3>Enter your Profile Details</h3>
 		</div>
 		<div class="appointment-grid">
-			<div class="col-md-4 appointmnet-middle">
+			<div class="col-md-1"></div>
+			<div class="col-md-10 appointmnet-middle">
 				<div class="inner">
-					<h4>Profile form</h4>
+					<h4>Doctor's Profile</h4>
 					<form action="/reading/" name="row" method="post" class="register">
-						<input type="text" name="name" id="name" placeholder="value" required="">
-						<input class="date" name="reading_date" id="datepicker" type="text" value="Appointment date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
-						<textarea  name="user_mood" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Mood...';}" >Tell us About your Mood...</textarea>
-						<input type="submit" onclick="myFunction()" value="Submit reading ">
+						<div class="row">
+							<div class="col-md-1"></div>
+							<div style="float: left; position: relative;" class="col-md-5">
+								First Name <input type="text" name="name" id="fname" placeholder="First Name" value= "">
+								Last Name <input type="text" name="name" id="lname" placeholder="Last Name" value= "">
+								User Name <input type="text" name="name" id="uname" placeholder="User Name" value= "" disabled="true">
+								Email Id <input type="text" name="name" id="lname" placeholder="Email" value= "" disabled="true">
+								Phone No <input type="text" id="phNo" onChange="func()" placeholder="Number" required>
+							</div>
+							<div style="float: left; position: relative;" class="col-md-5">
+								Speciality <input type="text" name="text" id="speciality" placeholder="Speciality">
+								Medical School <input type="text" name="text" id="mSchool" placeholder="Medical School">
+								Degrees <input type="text" name="text" id="degrees" placeholder="Degrees">
+								Experience <input type="text" name="text" id="mSchool" placeholder="Experience">
+								Working Days
+								<div>
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;S&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;M&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;T&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;W&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;T&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;F&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;S&emsp;
+								</div>
+							</div>	
+						</div>	
+						<div class="row">
+							<div class="col-md-1"></div>
+	 						<div class="col-md-10">
+	 							<textarea name="message" rows="10" cols="30" placeholder="Services"></textarea>
+	 							<input type="submit" onclick="myFunction()" value="Edit" class="pull-right">
+	 						</div>
+ 						</div>
 					</form>
 				</div>
 			</div>
@@ -157,8 +211,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--profileends-->
 
 <!--graph-->
-<div class="line">
-</div>
+
 	<div class="about" id="graph">
 		<div class="container">
 			<div class="w3ls-heading">
@@ -184,8 +237,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--graphends-->
 
 <!-- appointment form -->
-<div class="line">
-</div>
+
 <div class="appointment" id="reading">
 	<div class="container">
 		<div class="w3ls-heading">
@@ -222,8 +274,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	
 <!-- testimonials -->
-<div class="line">
-</div>
+
 	<div class="testimonials" id="testimonials">
 		<div class="container">
 			<div class="w3ls-heading">
@@ -281,132 +332,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 <!-- //testimonials -->
  <!-- classes -->	<!-- blog -->
-<!-- <div class="line">
-</div>
-	<div id="blog" class="banner-bottom blog">
-		<div class="container">
-			<div class="w3ls-heading">
-				<h3>Blog</h3>
-			</div>
-			<div class="w3layouts_classes_grids">
-				<ul id="flexiselDemo1">	
-					<li>
-						<div class="w3_agile_class_grid">
-							<div class="w3layouts_team_grid agileits_w3layouts_class">
-								<img src="images/1.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_team_grid_pos">
-									<div class="wthree_text">
-										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
-									</div>
-								</div>
-								<div class="agileits_w3layouts_class_pos">
-									<ul>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>14/3/2017</li>
-										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">11</a></li>
-										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">9</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="w3_agileits_class_grid">	
-								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
-								<h4><a href="#" data-toggle="modal" data-target="#myModal">ultricies libero lobortis</a></h4>
-								<h5>selena karl</h5>
-								<div class="w3_agileits_class_grid_pos">
-									<img src="images/test1.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="w3_agile_class_grid">
-							<div class="w3layouts_team_grid agileits_w3layouts_class">
-								<img src="images/20.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_team_grid_pos">
-									<div class="wthree_text">
-										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
-									</div>
-								</div>
-								<div class="agileits_w3layouts_class_pos">
-									<ul>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>15/3/2017</li>
-										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">24</a></li>
-										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">11</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="w3_agileits_class_grid">	
-								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
-								<h4><a href="#" data-toggle="modal" data-target="#myModal">auctor eget sem feugiat</a></h4>
-								<h5>Amelin Carl</h5>
-								<div class="w3_agileits_class_grid_pos">
-									<img src="images/test2.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="w3_agile_class_grid">
-							<div class="w3layouts_team_grid agileits_w3layouts_class">
-								<img src="images/21.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_team_grid_pos">
-									<div class="wthree_text">
-										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
-									</div>
-								</div>
-								<div class="agileits_w3layouts_class_pos">
-									<ul>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>16/3/2017</li>
-										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">26</a></li>
-										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">22</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="w3_agileits_class_grid">	
-								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
-								<h4><a href="#" data-toggle="modal" data-target="#myModal">blandit dolor venenatis</a></h4>
-								<h5>Thomas Richard</h5>
-								<div class="w3_agileits_class_grid_pos">
-									<img src="images/test3.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="w3_agile_class_grid">
-							<div class="w3layouts_team_grid agileits_w3layouts_class">
-								<img src="images/1.jpg" alt=" " class="img-responsive">
-								<div class="w3layouts_team_grid_pos">
-									<div class="wthree_text">
-										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
-									</div>
-								</div>
-								<div class="agileits_w3layouts_class_pos">
-									<ul>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>17/3/2017</li>
-										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">29</a></li>
-										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">10</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="w3_agileits_class_grid">	
-								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
-								<h4><a href="#" data-toggle="modal" data-target="#myModal">cursus urna urna quis</a></h4>
-								<h5>Laura Lii</h5>
-								<div class="w3_agileits_class_grid_pos">
-									<img src="images/test2.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div> -->
-<!-- //classes -->	<!-- //blog --> 
+
 
 <!-- contact -->
-<div class="line">
-</div>
+
 	 <div class="contact" id="contact">
 	<div class="container">
 		<div class="w3ls-heading">
@@ -417,14 +346,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="left-top">
 					<h4>Contact information</h4>
 					<p><i class="fa fa-calendar" aria-hidden="true"></i><strong>Monday - Friday <span class="dot">:</span></strong>9:30 AM to 6:30 PM</p>
-					<p><i class="fa fa-map-marker" aria-hidden="true"></i><strong class="p">address <span class="dot1">:</span></strong>Chicago, 5th main road, carnivalle</p>
+					<p><i class="fa fa-map-marker" aria-hidden="true"></i><strong class="p">address <span class="dot1">:</span></strong>LNMIIT Medical Center</p>
 					<p><i class="fa fa-phone" aria-hidden="true"></i><strong class="p1">phone <span class="dot2">:</span></strong>+040 2345 6789</p>
 					<p><i class="fa fa-envelope" aria-hidden="true"></i><strong class="p2">email <span class="dot3">:</span></strong><a href="mailto:info@example.com">example@email.com</a></p>
 				</div>
 				<div class="left-bottom">
 					<h4>get connected</h4>
-					<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
-						scelerisque magna non turpis euismod bibendum.</p>
+					<!-- <p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
+						scelerisque magna non turpis euismod bibendum.</p> -->
 					<div class="right-w3l fotw3">
 						<ul class="top-links">
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -437,7 +366,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-6 contact-right">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.296948478801!2d-87.70494908450506!3d41.88647047922158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e32a54d21f20f%3A0x51b98b6ffbdca819!2sW+Fulton+St%2C+Chicago%2C+IL%2C+USA!5e0!3m2!1sen!2sin!4v1489574334335"></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4181.371194618624!2d75.92126869482506!3d26.93662313284272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dba2021deb2b7%3A0xe6ab89f4bd5ff803!2sLNMIIT+Medical+Center!5e0!3m2!1sen!2sin!4v1509349746007" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -565,6 +494,18 @@ fit: true
 		});
 	</script>
 <!-- //flexisel -->
+
+<script type="text/javascript">
+	
+	function func(){
+		var l = document.getElementById("phNo").value;
+		if (l.length != 10) {
+			document.getElementById("sub").disabled = true;
+		}
+		else
+			document.getElementById("sub").disabled = false;
+	}
+</script>
 
 <!-- start-smooth-scrolling -->
 <script type="text/javascript" src="../../static/js/move-top.js"></script>
