@@ -147,6 +147,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						First Name <input type="text" name="name" id="fname" placeholder="First Name" value= "">
 						Last Name <input type="text" name="name" id="lname" placeholder="Last Name" value= "">
 						User Name <input type="text" name="name" id="uname" placeholder="User Name" value= "" disabled="true">
+						Date of Birth<input type="text" name="dob" id="dob" placeholder="Date Of Birth (YYYY-MM-DD)" value= "">
+						Address Line1 <input type="text" name="addLine1" id="al1" placeholder="Address Line 1" value="">
+						City <input type="text" name="city" id="city" placeholder="City" value="">
 						Phone No <input type="text" id="phNo" onChange="func()" placeholder="Number" required>
 						Email Id <input type="text" name="name" id="lname" placeholder="Email" value= "" disabled="true">
 						
@@ -202,8 +205,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h4>Date Filter form</h4>
 					<form action="/datefilter/" name="row" method="post" class="register">
 						<!-- <input type="text" name="user_value" id="name" placeholder="value" required=""> -->
-						<input class="date" name="reading_date_from" id="datepicker" type="text" value="Reading date from" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
-						<input class="date" name="reading_date_to" id="datepicker" type="text" value="Reading date to" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
+						<input class="date" name="reading_date_from" id="datepicker" type="text" value="Reading date from (YYYY-MM-DD)" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
+						<input class="date" name="reading_date_to" id="datepicker" type="text" value="Reading date to (YYYY-MM-DD)" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
 						
 						<input type="submit" onclick="myFunction()" value="Apply FIlter">
 					</form>
