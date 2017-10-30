@@ -69,10 +69,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<ul class="nav navbar-nav navbar-right cl-effect-15">
 							<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 							<li class="hidden"><a class="page-scroll" href="#page-top"></a>	</li>
-							<li><a class="page-scroll scroll" href="#home">Home</a></li>
+							<li><a class="page-scroll scroll" href="/home">Home</a></li>
 							<li><a class="page-scroll scroll"  href="#profile">Profile</a></li>
-							<li><a class="page-scroll scroll"  href="#graph">Graph</a></li>
 							<li><a class="page-scroll scroll"  href="#reading">Reading</a></li>
+							<li><a class="page-scroll scroll"  href="#graph">Graph</a></li>							
 							<li><a class="page-scroll scroll" href="{{ url_for('logout') }}">Logout</a></li>
 						</ul>
 					</div>
@@ -131,8 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	<!-- //banner --> 
 <!--profile-->
-<div class="line">
-</div>
+ <hr>
 <div class="appointment" id="profile">
 	<div class="container">
 		<div class="w3ls-heading">
@@ -147,6 +146,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						First Name <input type="text" name="name" id="fname" placeholder="First Name" value= "">
 						Last Name <input type="text" name="name" id="lname" placeholder="Last Name" value= "">
 						User Name <input type="text" name="name" id="uname" placeholder="User Name" value= "" disabled="true">
+						Date of Birth<input type="text" name="dob" id="dob" placeholder="Date Of Birth (YYYY-MM-DD)" value= "">
+						Address Line1 <input type="text" name="addLine1" id="al1" placeholder="Address Line 1" value="">
+						City <input type="text" name="city" id="city" placeholder="City" value="">
 						Phone No <input type="text" id="phNo" onChange="func()" placeholder="Number" required>
 						Email Id <input type="text" name="name" id="lname" placeholder="Email" value= "" disabled="true">
 						
@@ -160,20 +162,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!--profileends-->
 
-<!--graph-->
-<div class="line">
-</div>
-	<div class="about" id="graph" style="background-color: white;">
-		<div id="chartdiv">
-
-
-		</div>
-	</div>
-<!--graphends-->
-
 <!-- appointment form -->
-<div class="line">
-</div>
+ 
 <div class="appointment" id="reading">
 	<div class="container">
 		<div class="w3ls-heading">
@@ -202,8 +192,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h4>Date Filter form</h4>
 					<form action="/datefilter/" name="row" method="post" class="register">
 						<!-- <input type="text" name="user_value" id="name" placeholder="value" required=""> -->
-						<input class="date" name="reading_date_from" id="datepicker" type="text" value="Reading date from" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
-						<input class="date" name="reading_date_to" id="datepicker" type="text" value="Reading date to" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
+						<input class="date" name="reading_date_from" id="datepicker" type="text" value="Reading date from (YYYY-MM-DD)" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
+						<input class="date" name="reading_date_to" id="datepicker" type="text" value="Reading date to (YYYY-MM-DD)" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
 						
 						<input type="submit" onclick="myFunction()" value="Apply FIlter">
 					</form>
@@ -218,194 +208,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- //appointment form -->
 
+<!--graph-->
+ 
+	<div class="about" id="graph" style="background-color: white;">
+		<div id="chartdiv">
 
-	
-<!-- testimonials -->
-<div class="line">
-</div>
-	<div class="testimonials" id="testimonials">
-		<div class="container">
-			<div class="w3ls-heading">
-				<h3>Testimonials</h3>
-			</div>
-			<div class="w3_agileits_testimonial_grids">
-				<section class="slider">
-					<div class="flexslider">
-						<ul class="slides">
-							<li>
-								<div class="w3_agileits_testimonial_grid">
-									<p><i class="fa fa-quote-right" aria-hidden="true"></i>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-										dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-									<img src="../../static/images/test1.jpg" alt=" " class="img-responsive" />
-									<h4>Rosy James<span>mollit anim</span></h4>
-								</div>
-							</li>
-							<li>
-								<div class="w3_agileits_testimonial_grid">
-									<p><i class="fa fa-quote-right" aria-hidden="true"></i>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-										dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-									<img src="../../static/images/test2.jpg" alt=" " class="img-responsive" />
-									<h4>Allen parker<span>voluptate velit</span></h4>
-								</div>
-							</li>
-							<li>
-								<div class="w3_agileits_testimonial_grid">
-									<p><i class="fa fa-quote-right" aria-hidden="true"></i>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-										dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-									<img src="../../static/images/test3.jpg" alt=" " class="img-responsive" />
-									<h4>Crisp Ally <span>sint occaecat</span></h4>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<!-- flexSlider -->
-					<script defer src="../../static/js/jquery.flexslider.js"></script>
-					<script type="text/javascript">
-					$(window).load(function(){
-					  $('.flexslider').flexslider({
-						animation: "slide",
-						start: function(slider){
-						  $('body').removeClass('loading');
-						}
-					  });
-					});
-				  </script>
-				<!-- //flexSlider -->
-			</div>
+
 		</div>
 	</div>
-<!-- //testimonials -->
- <!-- classes -->	<!-- blog -->
-<!-- <div class="line">
-</div>
-	<div id="blog" class="banner-bottom blog">
-		<div class="container">
-			<div class="w3ls-heading">
-				<h3>Blog</h3>
-			</div>
-			<div class="w3layouts_classes_grids">
-				<ul id="flexiselDemo1">	
-					<li>
-						<div class="w3_agile_class_grid">
-							<div class="w3layouts_team_grid agileits_w3layouts_class">
-								<img src="images/1.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_team_grid_pos">
-									<div class="wthree_text">
-										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
-									</div>
-								</div>
-								<div class="agileits_w3layouts_class_pos">
-									<ul>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>14/3/2017</li>
-										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">11</a></li>
-										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">9</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="w3_agileits_class_grid">	
-								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
-								<h4><a href="#" data-toggle="modal" data-target="#myModal">ultricies libero lobortis</a></h4>
-								<h5>selena karl</h5>
-								<div class="w3_agileits_class_grid_pos">
-									<img src="images/test1.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="w3_agile_class_grid">
-							<div class="w3layouts_team_grid agileits_w3layouts_class">
-								<img src="images/20.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_team_grid_pos">
-									<div class="wthree_text">
-										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
-									</div>
-								</div>
-								<div class="agileits_w3layouts_class_pos">
-									<ul>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>15/3/2017</li>
-										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">24</a></li>
-										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">11</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="w3_agileits_class_grid">	
-								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
-								<h4><a href="#" data-toggle="modal" data-target="#myModal">auctor eget sem feugiat</a></h4>
-								<h5>Amelin Carl</h5>
-								<div class="w3_agileits_class_grid_pos">
-									<img src="images/test2.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="w3_agile_class_grid">
-							<div class="w3layouts_team_grid agileits_w3layouts_class">
-								<img src="images/21.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_team_grid_pos">
-									<div class="wthree_text">
-										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
-									</div>
-								</div>
-								<div class="agileits_w3layouts_class_pos">
-									<ul>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>16/3/2017</li>
-										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">26</a></li>
-										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">22</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="w3_agileits_class_grid">	
-								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
-								<h4><a href="#" data-toggle="modal" data-target="#myModal">blandit dolor venenatis</a></h4>
-								<h5>Thomas Richard</h5>
-								<div class="w3_agileits_class_grid_pos">
-									<img src="images/test3.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="w3_agile_class_grid">
-							<div class="w3layouts_team_grid agileits_w3layouts_class">
-								<img src="images/1.jpg" alt=" " class="img-responsive">
-								<div class="w3layouts_team_grid_pos">
-									<div class="wthree_text">
-										<a class="agile_class" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
-									</div>
-								</div>
-								<div class="agileits_w3layouts_class_pos">
-									<ul>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>17/3/2017</li>
-										<li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">29</a></li>
-										<li><i class="fa fa-share" aria-hidden="true"></i><a href="#">10</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="w3_agileits_class_grid">	
-								<p>Maecenas volutpat condimentum nisl sed aliquet. Vestibulum non nunc purus</p>
-								<h4><a href="#" data-toggle="modal" data-target="#myModal">cursus urna urna quis</a></h4>
-								<h5>Laura Lii</h5>
-								<div class="w3_agileits_class_grid_pos">
-									<img src="images/test2.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div> -->
-<!-- //classes -->	<!-- //blog --> 
-
+<!--graphends-->
+	 
 <!-- contact -->
-<div class="line">
-</div>
+ 
 	 <div class="contact" id="contact">
 	<div class="container">
 		<div class="w3ls-heading">
@@ -415,10 +229,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-6 contact-left-">
 				<div class="left-top">
 					<h4>Contact information</h4>
-					<p><i class="fa fa-calendar" aria-hidden="true"></i><strong>Monday - Friday <span class="dot">:</span></strong>9:30 AM to 6:30 PM</p>
-					<p><i class="fa fa-map-marker" aria-hidden="true"></i><strong class="p">address <span class="dot1">:</span></strong>Chicago, 5th main road, carnivalle</p>
-					<p><i class="fa fa-phone" aria-hidden="true"></i><strong class="p1">phone <span class="dot2">:</span></strong>+040 2345 6789</p>
-					<p><i class="fa fa-envelope" aria-hidden="true"></i><strong class="p2">email <span class="dot3">:</span></strong><a href="mailto:info@example.com">example@email.com</a></p>
+					<p><i class="fa fa-calendar" aria-hidden="true"></i><strong>Monday - Friday <span class="dot">:</span></strong>10:00 AM to 5:00 PM</p>
+					<p><i class="fa fa-map-marker" aria-hidden="true"></i><strong class="p">address <span class="dot1">:</span></strong>LNMIIT Medical Unit</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i><strong class="p1">phone <span class="dot2">:</span></strong>1800 180 6566</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><strong class="p2">email <span class="dot3">:</span></strong><a href="mailto:info@example.com">divyanshu1302@gmail.com</a></p>
 				</div>
 				<div class="left-bottom">
 					<h4>get connected</h4>
@@ -436,7 +250,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-6 contact-right">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.296948478801!2d-87.70494908450506!3d41.88647047922158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e32a54d21f20f%3A0x51b98b6ffbdca819!2sW+Fulton+St%2C+Chicago%2C+IL%2C+USA!5e0!3m2!1sen!2sin!4v1489574334335"></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.964304229177!2d75.92133461463679!3d26.936346083117368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dba2021deb2b7%3A0xe6ab89f4bd5ff803!2sLNMIIT+Medical+Center!5e0!3m2!1sen!2sin!4v1509389375892" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 			<div class="clearfix"></div>
 		</div>
