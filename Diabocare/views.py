@@ -21,7 +21,39 @@ from datetime import date
 def home():
     if 'username' in session:
         a =  'You are logged in as ' + session['username']
-        return render_template('index.html',a = a,current_user=current_user)
+
+        print session['username']
+
+        value = READING_COLLECTION.find({'postedBy': session['username']})
+        print value
+        # print Reading(value['value'])
+        print type(value)
+
+        reading_array = []
+        reading_date_array = []
+
+
+        for doc in value:
+            print doc['value']
+            print doc['reading_date']
+
+            reading_array.append(doc['value'])
+            reading_date_array.append(doc['reading_date'])
+
+            print type(reading_array)
+            # print type(doc)
+
+        print reading_array
+        print reading_date_array
+
+       
+
+
+        k = zip(reading_array, reading_date_array)
+
+        print k
+        print type(k)
+        return render_template('index.html',a = a,current_user=current_user, k=k)
     return render_template('home.html',current_user=current_user, form = LoginForm())
 
 '''@app.route('/profile/', methods=['GET'])
