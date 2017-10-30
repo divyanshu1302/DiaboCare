@@ -3,12 +3,13 @@ import pymongo
 import json
 from flask import request, redirect, render_template, url_for, flash, session
 from flask_login import login_user, logout_user, login_required, current_user
-from Diabocare.models import USERS_COLLECTION, READING_COLLECTION
+from Diabocare.models import USERS_COLLECTION, READING_COLLECTION ,doctor_USERS_COLLECTION
 
 from Diabocare.user import User
+from Diabocare.doctor_user import Doctor_User
 from Diabocare.reading import Reading
 
-from Diabocare.forms import LoginForm, SignUpForm  #, QuestionForm, AnswerForm
+from Diabocare.forms import LoginForm, SignUpForm,doctor_LoginForm,doctor_SignUpForm  #, QuestionForm, AnswerForm
 from bson.objectid import ObjectId
 
 from datetime import date
@@ -47,7 +48,7 @@ def login():
             flash("Logged in successfully!", category='success')
             return redirect(url_for('home'))
         flash("Wrong username or password!", category='error')
-    return render_template('login.html', title='HoverSpace | Login', form=form,current_user=current_user)
+    return render_template('login.html', title='Diabocare | Login', form=form,current_user=current_user)
 
 @app.route('/logout/')
 def logout():
@@ -72,7 +73,7 @@ def signup():
                 session['username'] = form.username.data
                 flash("SignUp successfull!", category='success')
                 return redirect(url_for('home'))
-    return render_template('signup.html', title='HoverSpace | Signup', form=form,current_user=current_user)
+    return render_template('signup.html', title='Diabocare | Signup', form=form,current_user=current_user)
 
 @app.route('/reading/', methods=['GET', 'POST'])
 def reading():
@@ -160,3 +161,59 @@ def dateFilter():
         return render_template('index.html', k=k, reading_array=reading_array, reading_date_array=reading_date_array)
 
     return render_template('index.html')
+
+#Doctor................
+
+# @app.route('/profile/', methods=['GET', 'POST'])
+# def reading():
+#     if request.method == 'POST':
+#          = request.form['reading_date']
+#         value = request.form['user_value']
+#         mood = request.form['user_mood']
+#         username = current_user.get_id()
+#         obj = Reading(username, reading_date, value, mood,db=True)
+#         return redirect(url_for('home'))
+#     return render_template('index.html')
+
+@app.route('/doctorhome/', methods=['GET', 'POST'])
+def doctorhome():
+    if 'username' in session:
+        a =  'You are logged in as ' + session['username']
+        return render_template('doctor_index.html',a = a,current_user=current_user)
+    return render_template('doctor_home.html',current_user=current_user, form = doctor_LoginForm())
+
+
+
+@app.route('/doctor_signup/', methods=['GET', 'POST'])
+def doctor_signup():
+    form = doctor_SignUpForm()
+    if request.method == 'POST' and form.validate_on_submit():
+        user = doctor_USERS_COLLECTION.find_one( {'email': form.email.data} )
+        if user:
+            flash("You have already signed up from this email id", category='error')
+        else:
+            user = doctor_USERS_COLLECTION.find_one( {'_id': form.username.data} )
+            if user:
+                flash("That username has already been taken", category='error')
+            else:
+                user_obj = Doctor_User(form.username.data, form.email.data, form.firstname.data,
+                        form.lastname.data, form.password.data, db=True)
+                session['username'] = form.username.data
+                flash("SignUp successfull!", category='success')
+                return redirect(url_for('doctorhome'))
+    return render_template('doctor_signup.html', title='Diabocare | Signup', form=form,current_user=current_user)
+
+
+@app.route('/doctor_login/', methods=['GET', 'POST'])
+def doctor_login():
+    form = doctor_LoginForm()
+    if request.method == 'POST' and form.validate_on_submit():
+        user = doctor_USERS_COLLECTION.find_one({ "_id": form.username.data })
+        if user and Doctor_User.validate_login(user['password'], form.password.data):
+            user_obj = Doctor_User(user['_id'])
+            session['username'] = form.username.data
+            login_user(user_obj, remember=True)
+            flash("Logged in successfully!", category='success')
+            return redirect(url_for('doctorhome'))
+        flash("Wrong username or password!", category='error')
+    return render_template('doctor_login.html', title='Diabocare | Login', form=form,current_user=current_user)

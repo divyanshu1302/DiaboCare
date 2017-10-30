@@ -1,0 +1,46 @@
+
+<div id="login">
+<div>
+    <h2>Login</h2>
+    <div class="content">
+    <div class="container">
+    <div class="row">
+    <br>
+    <br>
+    <div id = "login_form" class="col-md-3 col-md-offset-4" style="margin-left: 428px;">
+        <form  class="form-horizontal" action="/doctor_login/" method="POST" role="form">
+          <div id="legend">
+            <br>
+            <br>
+            <br>
+            <legend class="">Log In</legend>
+          </div>
+          {{ form.hidden_tag() }}
+          {% for field in form if field.widget.input_type != 'hidden' %}
+          <div class="control-group">
+            <br>
+            <label class="control-label" for="{{ field.name }}" > {{ field.label }}</label>
+            <div class="control">
+              {{ field(class_="form-control input-md") }}
+            </div>
+          </div>
+          {% endfor %}
+          <div class="control-group">
+          <br>
+            <button type="submit" id="login_btn" class="btn btn-default">Login</button>
+          </div>
+          <br>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
