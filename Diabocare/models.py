@@ -18,6 +18,5 @@ db = DATABASE.get_default_database()
 
 USERS_COLLECTION = db.users
 READING_COLLECTION = db.readings
-PROFILE_COLLECTION = db.profile
 doctor_USERS_COLLECTION = db.doctorusers
 

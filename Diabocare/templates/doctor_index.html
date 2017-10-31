@@ -1,1 +1,524 @@
-qwerty
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<head>
+{% if title %}
+<title>{{ title }}</title>
+        {% else %}
+        <title>DiaboCare</title>
+        {% endif %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Medical Care a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+<!-- flexslider-css-file -->
+<link rel="stylesheet" href="../../static/css/flexslider.css" type="text/css" media="screen" property="" />
+<!-- //flexslider-css-file -->
+
+<link rel="stylesheet" href="../../static/css/easy-responsive-tabs.css">
+
+<link href="../../static/css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons-css-file -->
+<link href="../../static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">	<!-- bootstrap-css-file -->
+<link href="../../static/css/style.css" type="text/css" rel="stylesheet" media="all">	<!-- style-css-file -->
+
+
+<!-- gallery -->
+<link rel="stylesheet" href="../../static/css/lightbox.css">
+<!-- //gallery -->
+
+<!-- fonts -->
+ <link href="//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet">
+ <link href="//fonts.googleapis.com/css?family=Cinzel:400,700,900" rel="stylesheet">
+ <!-- //fonts -->
+ 
+<!-- Default-JavaScript-File -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //Default-JavaScript-File -->
+	
+<script src="../../static/js/bootstrap.js"></script>	<!-- //bootstrap-JavaScript-File -->
+{% block head %}{% endblock %}	
+</head>
+<!-- Head -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+	<!-- banner -->
+	<div id="home" class="w3ls-banner"> 
+		<!-- header -->
+		<div class="header-w3layouts"> 
+			<!-- Navigation -->
+			<nav class="navbar navbar-default navbar-fixed-top"> 
+				<div class="container">
+					<div class="navbar-header page-scroll">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Diabo_care</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<h1><a class="navbar-brand" href="{{ url_for('home') }}">DiaboCare</a></h1>
+					</div> 
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						<ul class="nav navbar-nav navbar-right cl-effect-15">
+							<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+							<li class="hidden"><a class="page-scroll" href="#page-top"></a>	</li>
+							<li><a class="page-scroll scroll" href="/home">Home</a></li>
+							<li><a class="page-scroll scroll"  href="#profile">Profile</a></li>
+							<li><a class="page-scroll scroll"  href="#profile">Appointments</a></li>
+							<li><a class="page-scroll scroll" href="{{ url_for('logout') }}">Logout</a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container -->
+			</nav>  
+		</div>	
+		<!-- //header -->
+		<!--banner-->
+		<!--Slider-->
+			<div class="w3l_banner_info">
+				<div class="col-md-5 banner-form-agileinfo">
+					<img src="../../static/images/alt1.png" alt="" />
+				</div>
+				<div class="col-md-7 slider">
+					<div class="callbacks_container">
+								<ul class="rslides" id="slider3">
+									<li>
+										<div class="slider_banner_info">
+											 <h4>WE make healthy</h4>
+											<p>Medical school education and post graduate education empha -size thoroughness.The good physician treats the disease, great physician treats the patient who has the disease.</p>
+										</div>
+
+									</li>
+									<li>
+										<div class="slider_banner_info">
+											<h4>Medicine is a science</h4>
+											<p>The best doctor is the one you run to and can't find.We should be concerned not only about the health of individual patients, but also the health of our entire society.</p>
+										</div>
+
+									</li>
+									<li>
+										<div class="slider_banner_info">
+											<h4>Nothing cures health</h4>
+											<p>Never go to a doctor whose office plants have died.You know what they call the fellow who finishes last in his medical school graduating class? They call him 'Doctor. </p>
+										</div>
+
+									</li>
+									<li>
+										<div class="slider_banner_info">
+											<h4>We do best treatment</h4>
+											<p>Time is generally the best doctor.so well choose your best doctor before time lossesThe art of medicine consists in amusing the patient while nature cures the disease.</p>
+										</div>
+
+									</li>
+								</ul>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			<!--//Slider-->
+			
+			</div>
+		<!--//banner-->
+		
+	
+	<!-- //banner --> 
+<!--profile-->
+ <hr>
+<!-- Doctor's Profile -->
+<div class="appointment" id="profile">
+	<div class="container">
+		<div class="w3ls-heading">
+			<h3 style="color: white; font-weight: lighter;">Enter your Profile Details</h3>
+		</div>
+		<div class="appointment-grid">
+			<div class="col-md-1"></div>
+			<div class="col-md-10 appointmnet-middle">
+				<div class="inner">
+					<h4>Doctor's Profile</h4>
+					<form action="/reading/" name="row" method="post" class="register">
+						<div class="row">
+							<div class="col-md-1"></div>
+							<div style="float: left; position: relative; color: white; font-weight: lighter;" class="col-md-5">
+								First Name <input type="text" name="name" id="fname" placeholder="First Name" value= "">
+								Last Name <input type="text" name="name" id="lname" placeholder="Last Name" value= "">
+								User Name <input type="text" name="name" id="uname" placeholder="User Name" value= "" disabled="true">
+								Email Id <input type="text" name="name" id="lname" placeholder="Email" value= "" disabled="true">
+								Phone No <input type="text" id="phNo" onChange="func()" placeholder="Number" required>
+							</div>
+							<div style="float: left; position: relative; color: white; font-weight: lighter;" class="col-md-5">
+								Speciality <input type="text" name="text" id="speciality" placeholder="Speciality">
+								Medical School <input type="text" name="text" id="mSchool" placeholder="Medical School">
+								Degrees <input type="text" name="text" id="degrees" placeholder="Degrees">
+								Experience <input type="text" name="text" id="mSchool" placeholder="Experience">
+								Working Days
+								<div>
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;S&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;M&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;T&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;W&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;T&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;F&emsp;
+									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;S&emsp;
+								</div>
+							</div>	
+						</div>	
+						<div class="row">
+							<div class="col-md-1"></div>
+	 						<div class="col-md-10" style="color: white; font-weight: lighter;">
+	 							Address Line1 <input type="text" name="addLine1" id="al1" placeholder="Address Line 1" value="">
+								City <input type="text" name="city" id="city" placeholder="City" value="">
+	 							Services<textarea name="message" rows="10" cols="30" placeholder="Services"></textarea>
+	 							<input type="submit" onclick="myFunction()" value="Save" class="pull-right">
+	 						</div>
+ 						</div>
+					</form>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!--profileends-->	 
+<!-- contact -->
+ 
+	 <div class="contact" id="contact">
+	<div class="container">
+		<div class="w3ls-heading">
+			<h3 style="color: white; font-weight: lighter;">Contact</h3>
+		</div>
+		<div class="contact-top-grids">
+			<div class="col-md-6 contact-left-">
+				<div class="left-top">
+					<h4>Contact information</h4>
+					<p><i class="fa fa-calendar" aria-hidden="true"></i><strong>Monday - Friday <span class="dot">:</span></strong>10:00 AM to 5:00 PM</p>
+					<p><i class="fa fa-map-marker" aria-hidden="true"></i><strong class="p">address <span class="dot1">:</span></strong>LNMIIT Medical Unit</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i><strong class="p1">phone <span class="dot2">:</span></strong>1800 180 6566</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><strong class="p2">email <span class="dot3">:</span></strong><a href="mailto:info@example.com">divyanshu1302@gmail.com</a></p>
+				</div>
+				<div class="left-bottom">
+					<h4>get connected</h4>
+					<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
+						scelerisque magna non turpis euismod bibendum.</p>
+					<div class="right-w3l fotw3">
+						<ul class="top-links">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-6 contact-right">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.964304229177!2d75.92133461463679!3d26.936346083117368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dba2021deb2b7%3A0xe6ab89f4bd5ff803!2sLNMIIT+Medical+Center!5e0!3m2!1sen!2sin!4v1509389375892" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+			<div class="contact-w3ls">
+				<form action="#" method="post">
+					<div class="col-md-7 col-sm-7 contact-left agileits-w3layouts">
+						<input type="text" name="First Name" placeholder="Name" required="">
+						<input type="email"  class="email" name="Email" placeholder="Email" required="">
+						<input type="text" name="Number" placeholder="Mobile Number" required="">
+						<!-- <input type="text" class="email" name="Last Name" placeholder="Last Name" required=""> -->
+					</div> 
+					<div class="col-md-5 col-sm-5 contact-right agileits-w3layouts">
+						<textarea name="Message" placeholder="Message" required=""></textarea>
+						<input type="submit" value="Submit">
+					</div>
+					<div class="clearfix"> </div> 
+				</form>
+			</div>  
+
+	</div>
+</div>
+<!-- //contact -->
+
+<!-- copyright -->
+<div class="copyright-agile">
+	<p>&copy; 2017 DiaboCare. All rights reserved | Design by Team with Love</a></p>
+</div>
+<!-- //copyright -->
+
+
+
+<script src="../../static/js/easy-responsive-tabs.js"></script>
+<script>
+$(document).ready(function () {
+$('#horizontalTab').easyResponsiveTabs({
+type: 'default', //Types: default, vertical, accordion           
+width: 'auto', //auto or any width like 600px
+fit: true,   // 100% fit in a container
+closed: 'accordion', // Start closed if in accordion view
+activate: function(event) { // Callback function if tab is switched
+var $tab = $(this);
+var $info = $('#tabInfo');
+var $name = $('span', $info);
+$name.text($tab.text());
+$info.show();
+}
+});
+$('#verticalTab').easyResponsiveTabs({
+type: 'vertical',
+width: 'auto',
+fit: true
+});
+});
+</script>
+
+
+
+
+
+<!--banner Slider starts Here-->
+		<script src="../../static/js/responsiveslides.min.js"></script>
+							<script>
+								// You can also use "$(window).load(function() {"
+								$(function () {
+								  // Slideshow 4
+								  $("#slider3").responsiveSlides({
+									auto: true,
+									pager:true,
+									nav:false,
+									speed: 500,
+									namespace: "callbacks",
+									before: function () {
+									  $('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+									  $('.events').append("<li>after event fired.</li>");
+									}
+								  });
+							
+								});
+							 </script>
+
+							<!--banner Slider starts Here-->
+							<!--start-date-piker-->
+							<link rel="stylesheet" href="../../static/css/jquery-ui.css" />
+									<script src="../../static/js/jquery-ui.js"></script>
+									<script>
+										$(function() {
+										$( "#datepicker" ).datepicker();
+										});
+									</script>
+							<!--/End-date-piker-->
+							
+<!-- js for smooth scrollings -->
+	<script src="../../static/js/SmoothScroll.min.js"></script>
+<!-- js for smooth scrollings -->
+
+<!-- flexisel -->
+	<script type="text/javascript" src="../../static/js/jquery.flexisel.js"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: false,
+				autoPlaySpeed: 3000,    		
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: { 
+					portrait: { 
+						changePoint:480,
+						visibleItems: 1
+					}, 
+					landscape: { 
+						changePoint:640,
+						visibleItems:2
+					},
+					tablet: { 
+						changePoint:768,
+						visibleItems: 3
+					}
+				}
+			});
+			
+		});
+	</script>
+<!-- //flexisel -->
+
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="../../static/js/move-top.js"></script>
+<script type="text/javascript" src="../../static/js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smooth-scrolling -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+
+
+<!-- Scrolling Nav JavaScript --> 
+    <script src="../../static/js/scrolling-nav.js"></script>  
+<!-- //fixed-scroll-nav-js --> 
+
+
+
+
+ <div class="container">
+            {% include "flash.html" %}
+            {% block content %}{% endblock %}
+            </div>
+
+
+</body>
+
+
+
+<!-- Styles -->
+<style>
+#chartdiv {
+	width		: 100%;
+	height		: 500px;
+	font-size	: 11px;
+}																	
+</style>
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+<script type="text/javascript">
+	
+	function func(){
+		var l = document.getElementById("phNo").value;
+		if (l.length != 10) {
+			document.getElementById("sub").disabled = true;
+		}
+		else
+			document.getElementById("sub").disabled = false;
+	}
+</script>
+
+<!-- Chart code -->
+<script>
+var chartData = generatechartData();
+
+
+function generatechartData() {
+    var chartData = [];
+    // var firstDate = new Date();
+    // firstDate.setDate(firstDate.getDate() - 150);
+    // var visits = 500;
+
+    // for (var i = 0; i < 150; i++) {
+        // we create date objects here. In your data, you can have date strings
+        // and then set format of your dates using chart.dataDateFormat property,
+        // however when possible, use date objects, as this will speed up chart rendering.
+        // var newDate = new Date(firstDate);
+        // newDate.setDate(newDate.getDate() + i);
+
+        // visits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+
+        // chartData.push({
+        //     date: newDate,
+        //     visits: visits
+        // });
+
+
+        {% for i, j in k %}
+
+            // var p = AmCharts.stringToDate({{ j }}, "YYYY-MM-DD");
+            // new Date("2013/1/16");
+            var newDate = new Date("{{ j }}");
+
+            console.log(newDate)
+
+            chartData.push({
+            date: newDate,
+            visits: {{ i }}
+        });
+
+        {% endfor %}
+    // }
+    return chartData;
+}
+
+var chart = AmCharts.makeChart("chartdiv", {
+    "theme": "light",
+    "type": "serial",
+    "marginRight": 80,
+    "autoMarginOffset": 20,
+    "marginTop":20,
+    "dataProvider": chartData,
+    "valueAxes": [{
+        "id": "v1",
+        "axisAlpha": 0.1
+    }],
+    "graphs": [{
+        "useNegativeColorIfDown": true,
+        "balloonText": "[[category]]<br><b>value: [[value]]</b>",
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "bulletBorderColor": "#FFFFFF",
+        "hideBulletsCount": 50,
+        "lineThickness": 2,
+        "lineColor": "#fdd400",
+        "negativeLineColor": "#67b7dc",
+        "valueField": "visits"
+    }],
+    "chartScrollbar": {
+        "scrollbarHeight": 5,
+        "backgroundAlpha": 0.1,
+        "backgroundColor": "#FFFFFF",
+        "selectedBackgroundColor": "#67b7dc",
+        "selectedBackgroundAlpha": 1
+    },
+    "chartCursor": {
+        "valueLineEnabled": true,
+        "valueLineBalloonEnabled": true
+    },
+    "categoryField": "date",
+    "categoryAxis": {
+        "parseDates": true,
+        "axisAlpha": 0,
+        "minHorizontalGap": 60
+    },
+    "export": {
+        "enabled": true
+    }
+});
+
+chart.addListener("dataUpdated", zoomChart);
+//zoomChart();
+
+function zoomChart() {
+    if (chart.zoomToIndexes) {
+        chart.zoomToIndexes(130, chartData.length - 1);
+    }
+}
+</script>
+</html>

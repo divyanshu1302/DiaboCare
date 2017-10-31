@@ -72,7 +72,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a class="page-scroll scroll" href="/home">Home</a></li>
 							<li><a class="page-scroll scroll"  href="#profile">Profile</a></li>
 							<li><a class="page-scroll scroll"  href="#reading">Reading</a></li>
-							<li><a class="page-scroll scroll"  href="#graph">Graph</a></li>							
+							<li><a class="page-scroll scroll"  href="#graph">Graph</a></li>
+							<li><a class="page-scroll scroll"  href="#search">Search Doctor</a></li>							
 							<li><a class="page-scroll scroll" href="{{ url_for('logout') }}">Logout</a></li>
 						</ul>
 					</div>
@@ -217,7 +218,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 <!--graphends-->
-	 
+
+<!-- Search Doctor-->
+<div class="appointment" id="search">
+	<div class="container">
+		<div class="w3ls-heading">
+			<h3 style="color: white; font-weight: lighter;">Search Doctor</h3>
+		</div>
+		<div class="appointment-grid">
+			<div class="col-md-1"></div>
+			<div class="col-md-10 appointmnet-middle">
+				<div class="inner">
+					<form action="/reading/" name="row" method="post" class="register">
+						<div class="row">
+							<div class="col-md-1"></div>
+							<div style="float: left; position: relative; color: white; font-weight: lighter;" class="col-md-5">
+								First Name <input type="text" name="name" id="fname" placeholder="First Name" value= "">
+							</div>
+							<div style="float: left; position: relative; color: white; font-weight: lighter;" class="col-md-5">
+								Speciality <input type="text" name="text" id="speciality" placeholder="Speciality">
+							</div>	
+						</div>	
+						<div class="row">
+							<div class="col-md-1"></div>
+	 						<div class="col-md-10" style="color: white; font-weight: lighter;">
+	 							<input type="submit" onclick="myFunction()" value="Search" class="pull-centre">
+	 						</div>
+ 						</div>
+					</form>
+				</div>
+				<div>
+					<iframe src="{{ url_for('doctorlist') }}" width="500" height="500">Couldn't open iframe</iframe>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!--search ends-->
+
 <!-- contact -->
  
 	 <div class="contact" id="contact">

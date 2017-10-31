@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		table {
+		    width:100%;
+		    text-align: center;
+		}
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		    text-align: center;
+		}
+		th, td {
+		    padding: 5px;
+		    text-align: center;
+		    text-align: left;
+		}
+		tr{
+			text-align: center;
+		}
+		table#t01 tr:nth-child(even) {
+		    background-color: #eee;
+		}
+		table#t01 tr:nth-child(odd) {
+		   background-color:#fff;
+		}
+		table#t01 th {
+		    background-color: black;
+		    color: white;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- <link href="../../static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all"> -->	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Ph No</th>
+			</tr>
+			<tr>
+				<td>Jill Smith</td>
+				<td>jSmith@gmail.com</td>
+				<td>1111222233</td>
+			</tr>
+			<tr>
+				<td>Eve Jackson</td>
+				<td>eJackson@gmail.com</td>
+				<td>1111222233</td>
+			</tr>
+			<tr>
+				<td>John Doe</td>
+				<td>jDoe@gmail.com</td>
+				<td>1111222233</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-md-2"></div>
+	</div>
+</body>
+</html>

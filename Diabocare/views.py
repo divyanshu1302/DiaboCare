@@ -80,7 +80,7 @@ def profile():
         u_p = USERS_COLLECTION.find_one({ "_id": current_user.get_id() })
         up = u_p['password']
         p = USERS_COLLECTION.update({'_id': current_user.get_id()},{"$set":{'firstname':firstname,'lastname':lastname, 'email':email}})
-        user = USERS_COLLECTION.update( { '_id': current_user.get_id()},{"$push":{'dob':dob,'addLine1' : addLine1,'city':city,'phne':phne,'password':up}})
+        user = USERS_COLLECTION.update( { '_id': current_user.get_id()},{"$push":{'dob':dob,'addLine1' : addLine1,'city':city,'phne':phne}})
         return redirect(url_for('home'))
     return render_template('index.html',user_value = uservalue) #, title='HoverSpace | Profile', user=user)
 
@@ -275,13 +275,17 @@ def doctor_login():
         flash("Wrong username or password!", category='error')
     return render_template('doctor_login.html', title='Diabocare | Login', form=form,current_user=current_user)
 
-@app.route('/userprofile/', methods=['GET'])
-@login_required
-def doctorprofile():
-    user = USERS_COLLECTION.find_one({'_id': current_user.get_id()})
-    ques, ans = [], []
-    for q_obj in user['quesPosted']:
-        q = QuestionMethods(q_obj)
-        ques.append(q.getQuestion())
-    return redirect(url_for('home'))
-    #return render_template('profile.html', title='HoverSpace | Profile', user=user)
+# @app.route('/userprofile/', methods=['GET'])
+# @login_required
+# def doctorprofile():
+#     user = USERS_COLLECTION.find_one({'_id': current_user.get_id()})
+#     ques, ans = [], []
+#     for q_obj in user['quesPosted']:
+#         q = QuestionMethods(q_obj)
+#         ques.append(q.getQuestion())
+#     return redirect(url_for('home'))
+#     #return render_template('profile.html', title='HoverSpace | Profile', user=user)
+
+@app.route('/doctor_list/', methods=['GET', 'POST'])
+def doctorlist():
+    return render_template('doctor_list.html')
