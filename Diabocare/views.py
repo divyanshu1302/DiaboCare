@@ -13,6 +13,7 @@ from Diabocare.forms import LoginForm, SignUpForm,doctor_LoginForm,doctor_SignUp
 from bson.objectid import ObjectId
 
 from datetime import date
+from werkzeug.security import check_password_hash, generate_password_hash
 
 
 
@@ -24,7 +25,7 @@ def home():
         a =  'You are logged in as ' + session['username']
 
         print session['username']
-
+        user_value = USERS_COLLECTION.find({'_id':current_user.get_id()})
         value = READING_COLLECTION.find({'postedBy': session['username']})
         print value
         # print Reading(value['value'])
@@ -54,19 +55,34 @@ def home():
 
         print k
         print type(k)
-        return render_template('index.html',a = a,current_user=current_user, k=k)
+        uservalue = user_value[0]
+
+        # print uservalue['firstname'] 
+        return render_template('index.html',a = a,current_user=current_user, k=k,user_value = uservalue)
     return render_template('home.html',current_user=current_user, form = LoginForm())
 
-'''@app.route('/profile/', methods=['GET'])
+
 @login_required
+@app.route('/userprofile/', methods=['GET', 'POST'])
 def profile():
-    user = USERS_COLLECTION.find_one({'_id': current_user.get_id()})
-    ques, ans = [], []
-    for q_obj in user['quesPosted']:
-        q = QuestionMethods(q_obj)
-        ques.append(q.getQuestion())
-    return redirect(url_for('home'))
-    #return render_template('profile.html', title='HoverSpace | Profile', user=user)'''
+    user_value = USERS_COLLECTION.find({'_id':current_user.get_id()})
+    uservalue = user_value[0]
+    if request.method == 'POST':
+        firstname = request.form['fname']
+        lastname = request.form['lname']
+        # uname = request.form['uname']
+        # print uname
+        dob = request.form['dob']
+        addLine1 = request.form['addLine1']
+        city = request.form['city']
+        phne = request.form['phne']
+        email = request.form['email']
+        u_p = USERS_COLLECTION.find_one({ "_id": current_user.get_id() })
+        up = u_p['password']
+        p = USERS_COLLECTION.update({'_id': current_user.get_id()},{"$set":{'firstname':firstname,'lastname':lastname, 'email':email}})
+        user = USERS_COLLECTION.update( { '_id': current_user.get_id()},{"$push":{'dob':dob,'addLine1' : addLine1,'city':city,'phne':phne,'password':up}})
+        return redirect(url_for('home'))
+    return render_template('index.html',user_value = uservalue) #, title='HoverSpace | Profile', user=user)
 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
@@ -109,6 +125,8 @@ def signup():
 
 @app.route('/reading/', methods=['GET', 'POST'])
 def reading():
+    user_value = USERS_COLLECTION.find({'_id':current_user.get_id()})
+    uservalue = user_value[0]
     if request.method == 'POST':
         reading_date = request.form['reading_date']
         value = request.form['user_value']
@@ -116,7 +134,7 @@ def reading():
         username = current_user.get_id()
         obj = Reading(username, reading_date, value, mood,db=True)
         return redirect(url_for('home'))
-    return render_template('index.html')
+    return render_template('index.html',user_value = uservalue)
 
 
 @lm.user_loader
@@ -129,6 +147,8 @@ def load_user(username):
 
 @app.route('/datefilter/', methods=['GET', 'POST'])
 def dateFilter():
+    user_value = USERS_COLLECTION.find({'_id':current_user.get_id()})
+    uservalue = user_value[0]
     if request.method == 'POST':
         from_date = request.form['reading_date_from']
         to_date = request.form['reading_date_to']
@@ -190,9 +210,9 @@ def dateFilter():
             # print value
 
 
-        return render_template('index.html', k=k, reading_array=reading_array, reading_date_array=reading_date_array)
+        return render_template('index.html', k=k, reading_array=reading_array, reading_date_array=reading_date_array,user_value=user_value)
 
-    return render_template('index.html')
+    return render_template('index.html',user_value=uservalue)
 
 #Doctor................
 
@@ -206,6 +226,11 @@ def dateFilter():
 #         obj = Reading(username, reading_date, value, mood,db=True)
 #         return redirect(url_for('home'))
 #     return render_template('index.html')
+@app.route('/logout/')
+def doctorlogout():
+    session.pop('username', None)
+    logout_user()
+    return redirect(url_for('doctorhome'))
 
 @app.route('/doctorhome/', methods=['GET', 'POST'])
 def doctorhome():
@@ -249,3 +274,14 @@ def doctor_login():
             return redirect(url_for('doctorhome'))
         flash("Wrong username or password!", category='error')
     return render_template('doctor_login.html', title='Diabocare | Login', form=form,current_user=current_user)
+
+@app.route('/userprofile/', methods=['GET'])
+@login_required
+def doctorprofile():
+    user = USERS_COLLECTION.find_one({'_id': current_user.get_id()})
+    ques, ans = [], []
+    for q_obj in user['quesPosted']:
+        q = QuestionMethods(q_obj)
+        ques.append(q.getQuestion())
+    return redirect(url_for('home'))
+    #return render_template('profile.html', title='HoverSpace | Profile', user=user)

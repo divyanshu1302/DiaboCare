@@ -142,17 +142,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-6 appointmnet-middle">
 				<div class="inner">
 					<h4>Profile</h4>
-					<form action="/reading/" name="row" method="post" class="register">
-						First Name <input type="text" name="name" id="fname" placeholder="First Name" value= "">
-						Last Name <input type="text" name="name" id="lname" placeholder="Last Name" value= "">
-						User Name <input type="text" name="name" id="uname" placeholder="User Name" value= "" disabled="true">
-						Date of Birth<input type="text" name="dob" id="dob" placeholder="Date Of Birth (YYYY-MM-DD)" value= "">
-						Address Line1 <input type="text" name="addLine1" id="al1" placeholder="Address Line 1" value="">
+					<form action="/userprofile/" name="row" method="post" class="register">
+						First Name <input type="text" name="fname" id="fname" placeholder="First Name" value= "{{user_value['firstname']}}">
+						Last Name <input type="text" name="lname" id="lname" placeholder="Last Name" value= "{{user_value['lastname']}}">
+						User Name <input type="text" name="uname" id="uname" placeholder="User Name" value= "{{user_value['_id']}}" disabled="true">
+						Date of Birth<input type="text" name="dob" id="dob" placeholder="Date Of Birth (YYYY-MM-DD)" value= "{{user_value['dob']}}">
+						Address Line1 <input type="text" name="addLine1" id="al1" placeholder="Address Line 1" value="{{user_value['dob']}}">
 						City <input type="text" name="city" id="city" placeholder="City" value="">
-						Phone No <input type="text" id="phNo" onChange="func()" placeholder="Number" required>
-						Email Id <input type="text" name="name" id="lname" placeholder="Email" value= "" disabled="true">
+						Phone No <input type="text" name="phne" id="phNo" placeholder="Number" required>
+						Email Id <input type="text" name="email" id="lname" placeholder="Email" value= "{{user_value['email']}}">
 						
-						<input type="submit" id="sub" onclick="myFunction()" value="Edit" disabled="true">
+						<input type="submit" id="sub" onclick="myFunction()" value="Edit">
 					</form>
 				</div>
 			</div>
