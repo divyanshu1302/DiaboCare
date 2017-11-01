@@ -23,8 +23,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 def home():
     if 'username' in session:
         a =  'You are logged in as ' + session['username']
-
-        print session['username']
         user_value = USERS_COLLECTION.find({'_id':current_user.get_id()})
         value = READING_COLLECTION.find({'postedBy': session['username']})
         print value
@@ -216,16 +214,6 @@ def dateFilter():
 
 #Doctor................
 
-# @app.route('/profile/', methods=['GET', 'POST'])
-# def reading():
-#     if request.method == 'POST':
-#          = request.form['reading_date']
-#         value = request.form['user_value']
-#         mood = request.form['user_mood']
-#         username = current_user.get_id()
-#         obj = Reading(username, reading_date, value, mood,db=True)
-#         return redirect(url_for('home'))
-#     return render_template('index.html')
 @app.route('/logout/')
 def doctorlogout():
     session.pop('username', None)
@@ -235,8 +223,10 @@ def doctorlogout():
 @app.route('/doctorhome/', methods=['GET', 'POST'])
 def doctorhome():
     if 'username' in session:
+        user_value = doctor_USERS_COLLECTION.find({'_id':current_user.get_id()})
+        uservalue = user_value[0]
         a =  'You are logged in as ' + session['username']
-        return render_template('doctor_index.html',a = a,current_user=current_user)
+        return render_template('doctor_index.html',a = a,current_user=current_user,user_value =uservalue )
     return render_template('doctor_home.html',current_user=current_user, form = doctor_LoginForm())
 
 
@@ -275,17 +265,30 @@ def doctor_login():
         flash("Wrong username or password!", category='error')
     return render_template('doctor_login.html', title='Diabocare | Login', form=form,current_user=current_user)
 
-# @app.route('/userprofile/', methods=['GET'])
-# @login_required
-# def doctorprofile():
-#     user = USERS_COLLECTION.find_one({'_id': current_user.get_id()})
-#     ques, ans = [], []
-#     for q_obj in user['quesPosted']:
-#         q = QuestionMethods(q_obj)
-#         ques.append(q.getQuestion())
-#     return redirect(url_for('home'))
-#     #return render_template('profile.html', title='HoverSpace | Profile', user=user)
-
 @app.route('/doctor_list/', methods=['GET', 'POST'])
 def doctorlist():
     return render_template('doctor_list.html')
+
+@login_required
+@app.route('/doctorprofile/', methods=['GET', 'POST'])
+def doctor_profile():
+    user_value = doctor_USERS_COLLECTION.find({'_id':current_user.get_id()})
+    uservalue = user_value[0]
+    if request.method == 'POST':
+        firstname = request.form['fname']
+        lastname = request.form['lname']
+        email = request.form['email']
+        phne = request.form['phne']
+        speciality = request.form['speciality']
+        mSchool = request.form['mSchool']
+        degrees = request.form['degrees']
+        experience = request.form['experience']
+        addLine1 = request.form['addLine1']
+        city = request.form['city']
+        message = request.form['message']
+        # u_p = doctor_USERS_COLLECTION.find_one({ "_id": current_user.get_id() })
+        # up = u_p['password']
+        p = doctor_USERS_COLLECTION.update({'_id': current_user.get_id()},{"$set":{'firstname':firstname,'lastname':lastname, 'email':email }})
+        user = doctor_USERS_COLLECTION.update( { '_id': current_user.get_id()},{"$push":{'addLine1' : addLine1,'city':city,'phne':phne,'speciality':speciality,'mSchool':mSchool,'degrees':degrees,'experience':experience,'addLine1':addLine1,'city':city,'message':message}})
+        return redirect(url_for('doctorhome'))
+    return render_template('doctor_index.html',user_value = uservalue) 

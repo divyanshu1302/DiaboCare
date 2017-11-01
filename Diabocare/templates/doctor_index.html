@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<h1><a class="navbar-brand" href="{{ url_for('home') }}">DiaboCare</a></h1>
+						<h1><a class="navbar-brand" href="{{ url_for('doctorhome') }}">DiaboCare</a></h1>
 					</div> 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -71,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="hidden"><a class="page-scroll" href="#page-top"></a>	</li>
 							<li><a class="page-scroll scroll" href="/home">Home</a></li>
 							<li><a class="page-scroll scroll"  href="#profile">Profile</a></li>
-							<li><a class="page-scroll scroll"  href="#profile">Appointments</a></li>
+							<li><a class="page-scroll scroll"  href="#appointment">Appointments</a></li>
 							<li><a class="page-scroll scroll" href="{{ url_for('logout') }}">Logout</a></li>
 						</ul>
 					</div>
@@ -142,30 +142,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-10 appointmnet-middle">
 				<div class="inner">
 					<h4>Doctor's Profile</h4>
-					<form action="/reading/" name="row" method="post" class="register">
+					<form action="/doctorprofile/" name="row" method="post" class="register">
 						<div class="row">
 							<div class="col-md-1"></div>
 							<div style="float: left; position: relative; color: white; font-weight: lighter;" class="col-md-5">
-								First Name <input type="text" name="name" id="fname" placeholder="First Name" value= "">
-								Last Name <input type="text" name="name" id="lname" placeholder="Last Name" value= "">
-								User Name <input type="text" name="name" id="uname" placeholder="User Name" value= "" disabled="true">
-								Email Id <input type="text" name="name" id="lname" placeholder="Email" value= "" disabled="true">
-								Phone No <input type="text" id="phNo" onChange="func()" placeholder="Number" required>
+								First Name <input type="text" name="fname" id="fname" placeholder="First Name" value= "{{user_value['firstname']}}">
+								Last Name <input type="text" name="lname" id="lname" placeholder="Last Name" value= "{{user_value['lastname']}}">
+								User Name <input type="text" name="uname" id="uname" placeholder="User Name" value= "{{user_value['_id']}}" disabled="true">
+								Email Id <input type="text" name="email" id="email" placeholder="Email" value= "{{user_value['email']}}">
+								Phone No <input type="text" name="phne" id="phNo" onChange="func()" placeholder="Number" required>
 							</div>
 							<div style="float: left; position: relative; color: white; font-weight: lighter;" class="col-md-5">
-								Speciality <input type="text" name="text" id="speciality" placeholder="Speciality">
-								Medical School <input type="text" name="text" id="mSchool" placeholder="Medical School">
-								Degrees <input type="text" name="text" id="degrees" placeholder="Degrees">
-								Experience <input type="text" name="text" id="mSchool" placeholder="Experience">
+								Speciality <input type="text" name="speciality" id="speciality" placeholder="Speciality">
+								Medical School <input type="text" name="mSchool" id="mSchool" placeholder="Medical School">
+								Degrees <input type="text" name="degrees" id="degrees" placeholder="Degrees">
+								Experience <input type="text" name="experience" id="experience" placeholder="Experience">
 								Working Days
 								<div>
-									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;S&emsp;
-									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;M&emsp;
-									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;T&emsp;
-									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;W&emsp;
-									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;T&emsp;
-									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;F&emsp;
-									<input type="checkbox" name="workingDay" class="checkBox">&nbsp;S&emsp;
+									<input type="checkbox" name="sunday" class="checkBox">&nbsp;S&emsp;
+									<input type="checkbox" name="moday" class="checkBox">&nbsp;M&emsp;
+									<input type="checkbox" name="tuesday" class="checkBox">&nbsp;T&emsp;
+									<input type="checkbox" name="wednesday" class="checkBox">&nbsp;W&emsp;
+									<input type="checkbox" name="thrusday" class="checkBox">&nbsp;T&emsp;
+									<input type="checkbox" name="friday" class="checkBox">&nbsp;F&emsp;
+									<input type="checkbox" name="saturday" class="checkBox">&nbsp;S&emsp;
 								</div>
 							</div>	
 						</div>	
