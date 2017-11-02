@@ -44,6 +44,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 <script src="../../static/js/bootstrap.js"></script>	<!-- //bootstrap-JavaScript-File -->
 {% block head %}{% endblock %}	
+<style>
+table {
+    font-family: lato, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+	border: 1px solid grey;
+    text-align: left;
+    color: white;
+    font-weight: lighter;
+    padding: 8px;
+    background-color: transparent;
+}
+th {
+    border: 1px solid grey;
+    text-align: left;
+    padding: 8px;
+    color: white;
+    font-weight: lighter;
+    background-color: #5f5f5f;
+}
+</style>
 </head>
 <!-- Head -->
 
@@ -85,58 +108,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- //header -->
 		<!--banner-->
 		<!--Slider-->
-			<div class="w3l_banner_info">
-				<div class="col-md-5 banner-form-agileinfo">
-					<img src="../../static/images/alt1.png" alt="" />
+		<br><br><br><br>
+			<div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<img src="../../static/images/logo_2.png" alt="" />
 				</div>
-				<div class="col-md-7 slider">
-					<div class="callbacks_container">
-								<ul class="rslides" id="slider3">
-									<li>
-										<div class="slider_banner_info">
-											 <h4>WE make healthy</h4>
-											<p>Medical school education and post graduate education empha -size thoroughness.The good physician treats the disease, great physician treats the patient who has the disease.</p>
-										</div>
-
-									</li>
-									<li>
-										<div class="slider_banner_info">
-											<h4>Medicine is a science</h4>
-											<p>The best doctor is the one you run to and can't find.We should be concerned not only about the health of individual patients, but also the health of our entire society.</p>
-										</div>
-
-									</li>
-									<li>
-										<div class="slider_banner_info">
-											<h4>Nothing cures health</h4>
-											<p>Never go to a doctor whose office plants have died.You know what they call the fellow who finishes last in his medical school graduating class? They call him 'Doctor. </p>
-										</div>
-
-									</li>
-									<li>
-										<div class="slider_banner_info">
-											<h4>We do best treatment</h4>
-											<p>Time is generally the best doctor.so well choose your best doctor before time lossesThe art of medicine consists in amusing the patient while nature cures the disease.</p>
-										</div>
-
-									</li>
-								</ul>
+				<div class="col-md-4"></div>
+				<div >
+					<div class="callbacks_container">								
 					</div>
 				</div>
 				<div class="clearfix"></div>
 			<!--//Slider-->
 			
 			</div>
-		<!--//banner-->
-		
-	
-	<!-- //banner --> 
+		 
 <!--profile-->
- <hr>
 <div class="appointment" id="profile">
 	<div class="container">
 		<div class="w3ls-heading">
-			<h3>Enter your Profile Details</h3>
+			<h3 style="color: white">Enter your Profile Details</h3>
 		</div>
 		<div class="appointment-grid">
 			<div class="col-md-3"></div>
@@ -168,7 +160,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="appointment" id="reading">
 	<div class="container">
 		<div class="w3ls-heading">
-			<h3>Enter your Sugar Reading</h3>
+			<h3 style="color: white">Enter your Sugar Reading</h3>
 		</div>
 		<div class="appointment-grid">
 			<div class="col-md-4 appointmnet-left">
@@ -233,33 +225,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="row">
 							<div class="col-md-1"></div>
 							<div style="float: left; position: relative; color: white; font-weight: lighter;" class="col-md-5">
-								Speciality <!--  <input type="text" name="name" id="fname" placeholder="First Name" value= ""> -->
-								<select value="speciality" name="speciality">
+								Speciality &nbsp;&nbsp;<!--  <input type="text" name="name" id="fname" placeholder="First Name" value= ""> -->
+								<select value="speciality" name="speciality" style="color: grey; font-weight: lighter">
 						    		{% for i in special %}
 						    		<option value="{{ i }}">{{ i }}</option>
-						            <!-- <option value="HP">Half Paid</option>
-						            <option value="FP">Full Paid</option>
-						            <option value="HUP">Half Un-Paid</option>
-						            <option value="FUP">Full Un-Paid</option>
-						            <option value="CAS">Casual</option> -->
 						           {% endfor %}
 	    						</select>
 							</div>
 							<div style="float: left; position: relative; color: white; font-weight: lighter;" class="col-md-5">
-								Location <!-- <input type="text" name="text" id="speciality" placeholder="Speciality"> -->
-								<select value="location" name="location">
+								Location &nbsp;&nbsp;<!-- <input type="text" name="text" id="speciality" placeholder="Speciality"> -->
+								<select value="location" name="location" style="color: grey; font-weight: lighter">
 						    		{% for p in location %}
-						    		<option value="{{ p }}">{{ p }}</option>
-						            <!-- <option value="HP">Half Paid</option>
-						            <option value="FP">Full Paid</option>
-						            <option value="HUP">Half Un-Paid</option>
-						            <option value="FUP">Full Un-Paid</option>
-						            <option value="CAS">Casual</option> -->
+						    		<option value="{{ p }}">{{ p }}</option>						            
 						           {% endfor %}
 	    						</select>
 
 							</div>	
 						</div>	
+						<br>
 						<div class="row">
 							<div class="col-md-1"></div>
 	 						<div class="col-md-10" style="color: white; font-weight: lighter;">
@@ -268,6 +251,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  						</div>
 					</form>
 				</div>
+				<br>
 				<div>
 					<!-- <iframe src="{{ url_for('doctorlist') }}" width="500" height="500">Couldn't open iframe</iframe> -->
 
@@ -307,7 +291,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="contact" id="contact">
 	<div class="container">
 		<div class="w3ls-heading">
-			<h3>Contact</h3>
+			<h3 style="color: white">Contact</h3>
 		</div>
 		<div class="contact-top-grids">
 			<div class="col-md-6 contact-left-">
