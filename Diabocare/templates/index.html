@@ -229,14 +229,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-1"></div>
 			<div class="col-md-10 appointmnet-middle">
 				<div class="inner">
-					<form action="/reading/" name="row" method="post" class="register">
+					<form action="/search/" name="row" method="post" class="register">
 						<div class="row">
 							<div class="col-md-1"></div>
 							<div style="float: left; position: relative; color: white; font-weight: lighter;" class="col-md-5">
-								First Name <input type="text" name="name" id="fname" placeholder="First Name" value= "">
+								Speciality <!--  <input type="text" name="name" id="fname" placeholder="First Name" value= ""> -->
+								<select value="speciality" name="speciality">
+						    		{% for i in special %}
+						    		<option value="{{ i }}">{{ i }}</option>
+						            <!-- <option value="HP">Half Paid</option>
+						            <option value="FP">Full Paid</option>
+						            <option value="HUP">Half Un-Paid</option>
+						            <option value="FUP">Full Un-Paid</option>
+						            <option value="CAS">Casual</option> -->
+						           {% endfor %}
+	    						</select>
 							</div>
 							<div style="float: left; position: relative; color: white; font-weight: lighter;" class="col-md-5">
-								Speciality <input type="text" name="text" id="speciality" placeholder="Speciality">
+								Location <!-- <input type="text" name="text" id="speciality" placeholder="Speciality"> -->
+								<select value="location" name="location">
+						    		{% for p in location %}
+						    		<option value="{{ p }}">{{ p }}</option>
+						            <!-- <option value="HP">Half Paid</option>
+						            <option value="FP">Full Paid</option>
+						            <option value="HUP">Half Un-Paid</option>
+						            <option value="FUP">Full Un-Paid</option>
+						            <option value="CAS">Casual</option> -->
+						           {% endfor %}
+	    						</select>
+
 							</div>	
 						</div>	
 						<div class="row">
@@ -248,7 +269,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</form>
 				</div>
 				<div>
-					<iframe src="{{ url_for('doctorlist') }}" width="500" height="500">Couldn't open iframe</iframe>
+					<!-- <iframe src="{{ url_for('doctorlist') }}" width="500" height="500">Couldn't open iframe</iframe> -->
+
+					{% if l %}
+
+
+					<table>
+						  <tr>
+						    <th>NAME </th>
+						    <th>CONTACT </th>
+						    <th>ADDRESS </th>
+						  </tr>
+						  {% for i, j, k in l %}
+						  <tr>
+						    <td>{{ i }}</td>
+						    <td>{{ j }}</td>
+						    <td>{{ k }}</td>
+						  </tr>
+						  {% endfor %}
+					</table>
+
+
+
+
+
+					{% endif %}
 				</div>
 			</div>
 			<div class="clearfix"></div>
