@@ -26,46 +26,25 @@ def home():
 		a =  'You are logged in as ' + session['username']
 		user_value = USERS_COLLECTION.find({'_id':current_user.get_id()})
 		value = READING_COLLECTION.find({'postedBy': session['username']})
-		print value
-		# print Reading(value['value'])
-		print type(value)
-
 		reading_array = []
 		reading_date_array = []
 
 
 		for doc in value:
-			print doc['value']
-			print doc['reading_date']
-
 			reading_array.append(doc['value'])
 			reading_date_array.append(doc['reading_date'])
 
-			print type(reading_array)
-			# print type(doc)
-
-		print reading_array
-		print reading_date_array
-
-	   
-
-
 		k = zip(reading_array, reading_date_array)
 		k = sorted(k, key=itemgetter(1))
-		print k
-		print type(k)
 		uservalue = user_value[0]
 
 		doctor_values = doctor_USERS_COLLECTION.find()
 		special = []
 		location =[]
 		for i in doctor_values:
-			print i['speciality'][0]
 			special.append(i['speciality'][0])
-			print i['city'][0]
 			location.append(i['city'][0])
 
-		# print uservalue['firstname'] 
 		return render_template('index.html',a = a,current_user=current_user, k=k,user_value = uservalue, special=special, location=location)
 	return render_template('home.html',current_user=current_user, form = LoginForm())
 
@@ -78,8 +57,6 @@ def profile():
 	if request.method == 'POST':
 		firstname = request.form['fname']
 		lastname = request.form['lname']
-		# uname = request.form['uname']
-		# print uname
 		dob = request.form['dob']
 		addLine1 = request.form['addLine1']
 		city = request.form['city']
@@ -160,43 +137,14 @@ def dateFilter():
 	if request.method == 'POST':
 		from_date = request.form['reading_date_from']
 		to_date = request.form['reading_date_to']
-
-		print from_date
-		print to_date
-
-		print session['username']
-
-
 		value = READING_COLLECTION.find({'postedBy': session['username'], 'reading_date': {'$gte': from_date, '$lte': to_date}})
-		print value
-		# print Reading(value['value'])
-		print type(value)
-
 		reading_array = []
 		reading_date_array = []
-
-
 		for doc in value:
-			print doc['value']
-			print doc['reading_date']
-
 			reading_array.append(doc['value'])
 			reading_date_array.append(doc['reading_date'])
 
-			print type(reading_array)
-			# print type(doc)
-
-		print reading_array
-		print reading_date_array
-
-	   
-
-
-		k = zip(reading_array, reading_date_array)
-
-		print k
-		print type(k)
-
+		k = zip(reading_array, reading_date_array)		
 		k = sorted(k, key=itemgetter(1))
 
 		return render_template('index.html', k=k, reading_array=reading_array, reading_date_array=reading_date_array,user_value=user_value)
@@ -277,8 +225,6 @@ def doctor_profile():
 		addLine1 = request.form['addLine1']
 		city = request.form['city']
 		message = request.form['message']
-		# u_p = doctor_USERS_COLLECTION.find_one({ "_id": current_user.get_id() })
-		# up = u_p['password']
 		p = doctor_USERS_COLLECTION.update({'_id': current_user.get_id()},{"$set":{'firstname':firstname,'lastname':lastname, 'email':email }})
 		user = doctor_USERS_COLLECTION.update( { '_id': current_user.get_id()},{"$push":{'addLine1' : addLine1,'city':city,'phne':phne,'speciality':speciality,'mSchool':mSchool,'degrees':degrees,'experience':experience,'addLine1':addLine1,'city':city,'message':message}})
 		return redirect(url_for('doctorhome'))
@@ -293,69 +239,32 @@ def doctor_search():
 	if request.method == 'POST':
 		doctor_special = request.form['speciality']
 		doctor_location = request.form['location']
-
-		print doctor_location
-		print doctor_special
-
 		answers = doctor_USERS_COLLECTION.find({'speciality': doctor_special, 'city': doctor_location })
-
-		print answers
-
 		firstname = []
 		phone = []
 		addLine1 = []
-
-		for i in answers:
-			print firstname.append(i['firstname'])
-			print phone.append(i['phne'][0])
-			print addLine1.append(i['addLine1'][0])
-
-		print firstname
-		print phone
-		print addLine1
-
 		l = zip(firstname, phone, addLine1)
-
-		print l
 		doctor_values = doctor_USERS_COLLECTION.find()
 		special = []
 		location =[]
+
 		for i in doctor_values:
-			print i['speciality'][0]
 			special.append(i['speciality'][0])
-			print i['city'][0]
 			location.append(i['city'][0])
 
 		value = READING_COLLECTION.find({'postedBy': session['username']})
-		print value
-		# print Reading(value['value'])
-		print type(value)
-
 		reading_array = []
 		reading_date_array = []
 
 
 		for doc in value:
-			print doc['value']
-			print doc['reading_date']
-
 			reading_array.append(doc['value'])
 			reading_date_array.append(doc['reading_date'])
-
-			print type(reading_array)
-			# print type(doc)
-
-		print reading_array
-		print reading_date_array
-
-	   
 
 
 		k = zip(reading_array, reading_date_array)
 		k = sorted(k, key=itemgetter(1))
-		print k
-		print type(k)
-
+		
 		return render_template('index.html', user_value = uservalue, l=l, k=k, special=special, location=location)
 
 	else:
